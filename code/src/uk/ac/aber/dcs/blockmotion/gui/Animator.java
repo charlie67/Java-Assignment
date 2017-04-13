@@ -35,6 +35,7 @@ public class Animator extends Application {
     private IFootage footage = new Footage();
     private Stage stage;
     private Scene scene;
+
     private Scanner in = new Scanner(System.in);
 
 
@@ -59,6 +60,8 @@ public class Animator extends Application {
         // In this version of the app we will drive
         // the app using a command line menu.
         // YOU ARE REQUIRED TO IMPLEMENT THIS METHOD
+        System.out.println("Welcome to Blockmation");
+        System.out.println("Please choose an option:");
         runMenu();
 
         // This is how we can handle a window close event. I will talk
@@ -102,6 +105,9 @@ public class Animator extends Application {
                                 footage.load(name);
                                 go = false;
                                 System.out.println("loaded footage for " + name);
+
+                                createGrid(footage.getNumRows());
+
 //                                footage.printChar();
                             } catch (IOException e) {
                                 System.err.println("Could not open file: " + name +
@@ -115,8 +121,6 @@ public class Animator extends Application {
                             }
                         } while (go);
 
-                        createGrid(footage.getNumRows());
-
                         break;
 
                     case "s":
@@ -127,15 +131,20 @@ public class Animator extends Application {
                         break;
 
                     case "a":
+                        System.out.println("Running animation");
+                        runAnimation();
                         break;
 
                     case "t":
+                        System.out.println("Stopping animation");
+                        terminateAnimation();
                         break;
 
                     case "e":
                         break;
 
                     case "q":
+                        Platform.exit();
                         break;
 
                     default:
@@ -143,9 +152,8 @@ public class Animator extends Application {
                         break;
                 }
 
-            } while (!choice.equals('q'));
+            } while (!choice.equals("q"));
 
-            Platform.exit();
 
             // At some point you will call createGrid.
             // Here's an example
@@ -181,6 +189,8 @@ public class Animator extends Application {
     // Here is another example. This one is useful because it creates
     // the GUI grid. You will need to call this from the menu, e.g. when starting
     // an animation.
+
+
     private void createGrid() {
         Platform.runLater(() -> {
 
@@ -190,46 +200,53 @@ public class Animator extends Application {
         });
     }
 
+
     // I'll give you this method since I haven't done
     // much on javafx. This also creates a scene and adds it to the stage;
     // all very theatrical.
     private void createGrid(int numRows) {
-        // Creates a grid so that we can display the animation. We will see
-        // other layout panes in the lectures.
-        grid = new GridPane();
 
-        // We need to create a 2D array of javafx Buttons that we will
-        // add to the grid. The 2D array makes it much easier to change
-        // the colour of the buttons in the grid; easy lookup using
-        // 2D indicies. Note that we make this read-only for this display
-        // onlt grid. If you go for flair marks, then I'd imagine that you
-        // could create something similar that allows you to edits frames
-        // in the footage.
-        gridArray = new Button[numRows][numRows];
-        Button displayButton = null;
-        for (int row = 0; row < numRows; row++) {
-            for (int col = 0; col < numRows; col++) {  // The display is square
-                displayButton = new Button();
-                gridArray[row][col] = displayButton;
-                displayButton.setDisable(true);
-                grid.add(displayButton, col, row);
+        /*had to write this platform.runLater thing because otherwise I was getting a
+        java.lang.IllegalStateException: Not on FX application thread; currentThread = Thread-4
+        */
+        Platform.runLater(() -> {
+            // Creates a grid so that we can display the animation. We will see
+            // other layout panes in the lectures.
+            grid = new GridPane();
+
+            // We need to create a 2D array of javafx Buttons that we will
+            // add to the grid. The 2D array makes it much easier to change
+            // the colour of the buttons in the grid; easy lookup using
+            // 2D indicies. Note that we make this read-only for this display
+            // onlt grid. If you go for flair marks, then I'd imagine that you
+            // could create something similar that allows you to edits frames
+            // in the footage.
+            gridArray = new Button[numRows][numRows];
+            Button displayButton = null;
+            for (int row = 0; row < numRows; row++) {
+                for (int col = 0; col < numRows; col++) {  // The display is square
+                    displayButton = new Button();
+                    gridArray[row][col] = displayButton;
+                    displayButton.setDisable(true);
+                    grid.add(displayButton, col, row);
+                }
             }
-        }
 
-        // Create a scene to hold the grid of buttons
-        // The stage will "shrink wrap" around the grid of buttons,
-        // so we don't need to set its height and width.
-        scene = new Scene(grid);
-        stage.setScene(scene);
-        scene.getStylesheets().add(Animator.class.getResource("styling.css").toExternalForm());
+            // Create a scene to hold the grid of buttons
+            // The stage will "shrink wrap" around the grid of buttons,
+            // so we don't need to set its height and width.
+            scene = new Scene(grid);
+            stage.setScene(scene);
+            scene.getStylesheets().add(Animator.class.getResource("styling.css").toExternalForm());
 
-        // Make it resizable so that the window shrinks to fit the scene grid
-        stage.setResizable(true);
-        stage.sizeToScene();
-        // Raise the curtain on the stage!
-        stage.show();
-        // Stop the user from resizing the window
-        stage.setResizable(false);
+            // Make it resizable so that the window shrinks to fit the scene grid
+            stage.setResizable(true);
+            stage.sizeToScene();
+            // Raise the curtain on the stage!
+            stage.show();
+            // Stop the user from resizing the window
+            stage.setResizable(false);
+        });
     }
 
     // I'll also give you this one too. This does the animation and sets colours for
@@ -302,8 +319,6 @@ public class Animator extends Application {
     }
 
     private void printMenu() {
-        System.out.println("Welcome to Blockmation");
-        System.out.println("Please choose an option");
         System.out.println("l - load footage file");
         System.out.println("s - save footage file");
         System.out.println("sa - save as footage file");
