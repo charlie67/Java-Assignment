@@ -19,9 +19,11 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import uk.ac.aber.dcs.blockmotion.model.Footage;
 import uk.ac.aber.dcs.blockmotion.model.IFootage;
 import uk.ac.aber.dcs.blockmotion.model.IFrame;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Animator extends Application {
@@ -30,7 +32,7 @@ public class Animator extends Application {
     private GridPane grid;
     private Thread animation;
     private boolean doRun;
-    private IFootage footage;
+    private IFootage footage = new Footage();
     private Stage stage;
     private Scene scene;
     private Scanner in = new Scanner(System.in);
@@ -80,61 +82,74 @@ public class Animator extends Application {
         // constructor takes a Runnable
         Runnable commandLineTask = () -> {
 
-            boolean canRun = true;
             String choice;
 
-            while(canRun) {
+            do {
 
-                System.out.println("Welcome to Blockmation");
-                System.out.println("Please choose an option");
-                System.out.println("l - load footage file");
-                System.out.println("s - save footage file");
-                System.out.println("sa - save as footage file");
-                System.out.println("a - run footage aimation");
-                System.out.println("t - stop footage animation");
-                System.out.println("e - edit current footage");
-                System.out.println("q - Quit");
-                System.out.println("Enter option:");
+                printMenu();
                 choice = in.nextLine().toLowerCase();
 
-                while (canRun) {
-                    switch (choice) {
-                        case "l":
-                            System.out.println("loading footage file");
-                            canRun = false;
-                            break;
-                        case "s":
-                            System.out.println("");
-                            canRun = false;
-                            break;
-                        case "sa":
-                            canRun = false;
-                            break;
-                        case "a":
-                            canRun = false;
-                            break;
-                        case "t":
-                            canRun = false;
-                            break;
-                        case "e":
-                            canRun = false;
-                            break;
-                        case "q":
-                            canRun = false;
-                            break;
-                        default:
-                            System.out.println("Unknown command, please try again.");
-                            canRun = true;
-                            break;
-                    }
-                    choice = "";
-                }
-            }
+                switch (choice) {
+                    case "l":
+                        System.out.println("Please enter file name");
+                        String name = in.nextLine();
+                        System.out.println("loading footage file");
 
+                        boolean go;
+                        do {
+                            go = true;
+                            try {
+                                footage.load(name);
+                                go = false;
+                                System.out.println("loaded footage for " + name);
+//                                footage.printChar();
+                            } catch (IOException e) {
+                                System.err.println("Could not open file: " + name +
+                                        " provide a different name for the footage file or press q to quit");
+                                String answer = in.nextLine();
+                                if (answer.equals("q")) {
+                                    break;
+                                } else {
+                                    name = answer;
+                                }
+                            }
+                        } while (go);
+
+                        createGrid(footage.getNumRows());
+
+                        break;
+
+                    case "s":
+                        System.out.println("");
+                        break;
+
+                    case "sa":
+                        break;
+
+                    case "a":
+                        break;
+
+                    case "t":
+                        break;
+
+                    case "e":
+                        break;
+
+                    case "q":
+                        break;
+
+                    default:
+                        System.out.println("Unknown command, please try again.");
+                        break;
+                }
+
+            } while (!choice.equals('q'));
+
+            Platform.exit();
 
             // At some point you will call createGrid.
             // Here's an example
-            createGrid();
+            //createGrid();
 
         };
         Thread commandLineThread = new Thread(commandLineTask);
@@ -146,7 +161,7 @@ public class Animator extends Application {
         // Platform.exit();
     }
 
-    private void editMenu(){
+    private void editMenu() {
         /*
         another method for the edit submenu and its commands
         TODO implement this menu
@@ -280,6 +295,23 @@ public class Animator extends Application {
             animation = new Thread(animationToRun);
             animation.start();
         }
+    }
+
+    private void printEditMenu() {
+        //TODO write the edit menu
+    }
+
+    private void printMenu() {
+        System.out.println("Welcome to Blockmation");
+        System.out.println("Please choose an option");
+        System.out.println("l - load footage file");
+        System.out.println("s - save footage file");
+        System.out.println("sa - save as footage file");
+        System.out.println("a - run footage aimation");
+        System.out.println("t - stop footage animation");
+        System.out.println("e - edit current footage");
+        System.out.println("q - Quit");
+        System.out.println("Enter option:");
     }
 }
 

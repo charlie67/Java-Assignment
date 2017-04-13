@@ -3,13 +3,15 @@ package uk.ac.aber.dcs.blockmotion.model;
 import java.io.PrintWriter;
 
 /**
- * Created by charl on 12/04/2017.
+ * @author Charlie Robinson
+ * @verison 13.4.17
  */
 public class Frame implements IFrame {
+    private char[][] blocks;
+
 
     @Override
     public void insertLines(String[] lines) {
-
     }
 
     @Override
@@ -24,12 +26,12 @@ public class Frame implements IFrame {
 
     @Override
     public char getChar(int i, int j) {
-        return 0;
+        return blocks[i][j];
     }
 
     @Override
     public void setChar(int i, int j, char ch) {
-
+        blocks[i][j] = ch;
     }
 
     @Override
@@ -40,5 +42,13 @@ public class Frame implements IFrame {
     @Override
     public void replace(IFrame f) {
 
+    }
+
+    /**
+     * will initialize the char array and set the array to be the correct size
+     * @param size the number of rows or columns
+     */
+    public void setBlockSize(int size){
+        blocks = new char[size][size];
     }
 }

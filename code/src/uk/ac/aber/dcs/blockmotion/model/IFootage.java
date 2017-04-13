@@ -55,4 +55,9 @@ public abstract interface IFootage {
      * @param t the transformer
      */
     public abstract void transform(Transformer t);
+
+    /***
+     * Method used to test my loading function
+     */
+    public abstract void printChar();
 }
