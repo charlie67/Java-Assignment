@@ -5,7 +5,7 @@ package uk.ac.aber.dcs.blockmotion.gui;
  * need to update this file
  *
  * @author Chris Loftus  Charlie Robinson
- * @version 1.0 (29th March 2017)  (change the version number and date)
+ * @version 1.0 (29th March 2017)
  */
 
 import javafx.application.Application;
@@ -97,36 +97,38 @@ public class Animator extends Application {
                 System.out.println("Enter option:");
                 choice = in.nextLine().toLowerCase();
 
-                switch (choice) {
-                    case "l":
-                        System.out.println("loading footage file");
-                        canRun = false;
-                        break;
-                    case "s":
-                        System.out.println("");
-                        canRun = false;
-                        break;
-                    case "sa":
-                        canRun = false;
-                        break;
-                    case "a":
-                        canRun = false;
-                        break;
-                    case "t":
-                        canRun = false;
-                        break;
-                    case "e":
-                        canRun = false;
-                        break;
-                    case "q":
-                        canRun = false;
-                        break;
-                    default:
-                        System.out.println("Unknown command, please try again.");
-                        canRun = true;
-                        break;
+                while (canRun) {
+                    switch (choice) {
+                        case "l":
+                            System.out.println("loading footage file");
+                            canRun = false;
+                            break;
+                        case "s":
+                            System.out.println("");
+                            canRun = false;
+                            break;
+                        case "sa":
+                            canRun = false;
+                            break;
+                        case "a":
+                            canRun = false;
+                            break;
+                        case "t":
+                            canRun = false;
+                            break;
+                        case "e":
+                            canRun = false;
+                            break;
+                        case "q":
+                            canRun = false;
+                            break;
+                        default:
+                            System.out.println("Unknown command, please try again.");
+                            canRun = true;
+                            break;
+                    }
+                    choice = "";
                 }
-                choice = "";
             }
 
 
