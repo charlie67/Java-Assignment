@@ -1,4 +1,6 @@
-package uk.ac.aber.dcs.blockmotion.model;
+package uk.ac.aber.dcs.blockmotion.transformer;
+
+import uk.ac.aber.dcs.blockmotion.model.IFrame;
 
 /**
  * All transformer classes must implement this interace

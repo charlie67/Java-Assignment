@@ -1,5 +1,7 @@
 package uk.ac.aber.dcs.blockmotion.model;
 
+import uk.ac.aber.dcs.blockmotion.transformer.Transformer;
+
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;

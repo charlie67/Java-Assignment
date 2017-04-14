@@ -36,6 +36,12 @@ public class Animator extends Application {
     private Stage stage;
     private Scene scene;
 
+    //for edit menu slide numbers
+    private int slideRightNumber = 1;
+    private int slideLeftNumber = 1;
+    private int slideDownNumber = 1;
+    private int slideUpNumber = 1;
+
     private Scanner in = new Scanner(System.in);
 
 
@@ -94,6 +100,7 @@ public class Animator extends Application {
 
                 switch (choice) {
                     case "l":
+
                         System.out.println("Please enter file name");
                         String name = in.nextLine();
                         System.out.println("loading footage file");
@@ -105,7 +112,9 @@ public class Animator extends Application {
                                 footage.load(name);
                                 go = false;
                                 System.out.println("loaded footage for " + name);
+                                layoutTest();
 
+                                //TODO footage needs to be flipped vertically because atm it's upside down
                                 createGrid(footage.getNumRows());
 
 //                                footage.printChar();
@@ -141,6 +150,7 @@ public class Animator extends Application {
                         break;
 
                     case "e":
+                        editMenu();
                         break;
 
                     case "q":
@@ -170,11 +180,72 @@ public class Animator extends Application {
     }
 
     private void editMenu() {
-        /*
-        another method for the edit submenu and its commands
-        TODO implement this menu
-        */
+        System.out.println("** edit menu **");
+        String input;
+
+
+        do {
+            printEditMenu();
+            input = in.nextLine().toLowerCase();
+
+            switch (input) {
+                case "fh":
+                    break;
+
+                case "fv":
+                    break;
+
+                case "sl":
+                    break;
+
+                case "sr":
+                    break;
+
+                case "su":
+                    break;
+
+                case "sd":
+                    break;
+
+                case "nr":
+                    System.out.println("Enter the new number:");
+                    slideRightNumber = in.nextInt();
+                    in.nextLine();
+                    break;
+
+                case "nl":
+                    System.out.println("Enter the new number:");
+                    slideLeftNumber = in.nextInt();
+                    in.nextLine();
+                    break;
+
+                case "nd":
+                    System.out.println("Enter the new number:");
+                    slideDownNumber = in.nextInt();
+                    in.nextLine();
+                    break;
+
+                case "nu":
+                    System.out.println("Enter the new number:");
+                    slideUpNumber = in.nextInt();
+                    in.nextLine();
+                    break;
+
+                case "r":
+                    break;
+
+                case "q":
+                    break;
+
+                default:
+                    System.out.println("Unknown command, please try again.");
+                    break;
+            }
+
+        } while (!input.equals("q"));
+
     }
+
 
     // An example method that you might like to call from your
     // menu. Whenever you need to do something in the GUI thread
@@ -315,7 +386,19 @@ public class Animator extends Application {
     }
 
     private void printEditMenu() {
-        //TODO write the edit menu
+        System.out.println("fh - Flip horizontal");
+        System.out.println("fv - Flip vertical");
+        System.out.println("sl - Slide left");
+        System.out.println("sr - Slide right");
+        System.out.println("su - Slide up");
+        System.out.println("sd - Slide down");
+        System.out.println("nl - Slide left number, Currently= " + slideLeftNumber);
+        System.out.println("nr - Slide right number, Currently= " + slideRightNumber);
+        System.out.println("nd - Slide down number, Currently= " + slideDownNumber);
+        System.out.println("nu - Slide up number, Currently= " + slideUpNumber);
+        System.out.println("r - Repeat last operation");
+        System.out.println("q - quit editing");
+        System.out.println("Enter option:");
     }
 
     private void printMenu() {
@@ -327,6 +410,21 @@ public class Animator extends Application {
         System.out.println("e - edit current footage");
         System.out.println("q - Quit");
         System.out.println("Enter option:");
+    }
+
+
+    /**
+     * Used to print out the i's and j's are the correct way round
+     */
+    private void layoutTest(){
+        System.out.println("i = 0, j = 0");
+        System.out.println(footage.getFrame(0).getChar(0,0));
+
+        System.out.println("i = 0, j = 1");
+        System.out.println(footage.getFrame(0).getChar(0,1));
+
+        System.out.println("i = 0, j = 2");
+        System.out.println(footage.getFrame(0).getChar(0,2));
     }
 }
 

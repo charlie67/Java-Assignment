@@ -1,5 +1,7 @@
 package uk.ac.aber.dcs.blockmotion.model;
 
+import uk.ac.aber.dcs.blockmotion.transformer.Transformer;
+
 import java.io.IOException;
 
 /**
@@ -60,4 +62,5 @@ public abstract interface IFootage {
      * Method used to test my loading function
      */
     public abstract void printChar();
+
 }
