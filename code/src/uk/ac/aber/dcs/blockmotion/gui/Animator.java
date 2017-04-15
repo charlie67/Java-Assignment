@@ -36,6 +36,7 @@ public class Animator extends Application {
     private Stage stage;
     private Scene scene;
     private String fileName;
+    private boolean transformationsDone = false;
 
     //for edit menu slide numbers
     private int slideRightNumber = 1;
@@ -133,31 +134,14 @@ public class Animator extends Application {
                         break;
 
                     case "s":
-
-                        System.out.println("Saving as " + fileName);
-                        go = true;
-
-                        do {
-                            go = true;
-                            try {
-                                footage.save(fileName);
-                                go = false;
-                                System.out.println("Saved footage for " + fileName);
-
-                            } catch (IOException e) {
-                                System.err.println("Could not open file: " + fileName +
-                                        " provide a different name for the footage file or press q to quit");
-                                String answer = in.nextLine();
-                                if (answer.equals("q")) {
-                                    break;
-                                } else {
-                                    fileName = answer;
-                                }
-                            }
-                        } while (go);
+                        saveFootage(fileName);
                         break;
 
                     case "sa":
+                        System.out.println("Enter the new filename");
+                        String newFilename = in.nextLine();
+                        saveFootage(newFilename);
+
                         break;
 
                     case "a":
@@ -175,6 +159,15 @@ public class Animator extends Application {
                         break;
 
                     case "q":
+                        if (transformationsDone){
+                            System.out.println("Do you want to save first (y/n)?");
+                            String input = in.nextLine();
+                            if (input.equals("y")){
+                                saveFootage(fileName);
+                            }
+                            Platform.exit();
+                            break;
+                        }
                         Platform.exit();
                         break;
 
@@ -200,6 +193,31 @@ public class Animator extends Application {
         // Platform.exit();
     }
 
+    private void saveFootage(String fn) {
+        boolean go;
+        System.out.println("Saving as " + fn);
+
+
+        do {
+            go = true;
+            try {
+                footage.save(fn);
+                go = false;
+                System.out.println("Saved footage for " + fn);
+
+            } catch (IOException e) {
+                System.err.println("Could not open file: " + fn +
+                        " provide a different name for the footage file or press q to quit");
+                String answer = in.nextLine();
+                if (answer.equals("q")) {
+                    break;
+                } else {
+                    fn = answer;
+                }
+            }
+        } while (go);
+    }
+
     private void editMenu() {
         System.out.println("** edit menu **");
         String input;
@@ -211,21 +229,27 @@ public class Animator extends Application {
 
             switch (input) {
                 case "fh":
+                    transformationsDone = true;
                     break;
 
                 case "fv":
+                    transformationsDone = true;
                     break;
 
                 case "sl":
+                    transformationsDone = true;
                     break;
 
                 case "sr":
+                    transformationsDone = true;
                     break;
 
                 case "su":
+                    transformationsDone = true;
                     break;
 
                 case "sd":
+                    transformationsDone = true;
                     break;
 
                 case "nr":
