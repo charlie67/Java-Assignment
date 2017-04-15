@@ -35,6 +35,7 @@ public class Animator extends Application {
     private IFootage footage = new Footage();
     private Stage stage;
     private Scene scene;
+    private String fileName;
 
     //for edit menu slide numbers
     private int slideRightNumber = 1;
@@ -102,30 +103,29 @@ public class Animator extends Application {
                     case "l":
 
                         System.out.println("Please enter file name");
-                        String name = in.nextLine();
-                        System.out.println("loading footage file");
+                        fileName = in.nextLine();
+
 
                         boolean go;
                         do {
                             go = true;
                             try {
-                                footage.load(name);
+                                footage.load(fileName);
                                 go = false;
-                                System.out.println("loaded footage for " + name);
-                                layoutTest();
+                                System.out.println("loaded footage for " + fileName);
+
 
                                 //TODO footage needs to be flipped vertically because atm it's upside down
                                 createGrid(footage.getNumRows());
 
-//                                footage.printChar();
                             } catch (IOException e) {
-                                System.err.println("Could not open file: " + name +
+                                System.err.println("Could not open file: " + fileName +
                                         " provide a different name for the footage file or press q to quit");
                                 String answer = in.nextLine();
                                 if (answer.equals("q")) {
                                     break;
                                 } else {
-                                    name = answer;
+                                    fileName = answer;
                                 }
                             }
                         } while (go);
@@ -133,7 +133,28 @@ public class Animator extends Application {
                         break;
 
                     case "s":
-                        System.out.println("");
+
+                        System.out.println("Saving as " + fileName);
+                        go = true;
+
+                        do {
+                            go = true;
+                            try {
+                                footage.save(fileName);
+                                go = false;
+                                System.out.println("Saved footage for " + fileName);
+
+                            } catch (IOException e) {
+                                System.err.println("Could not open file: " + fileName +
+                                        " provide a different name for the footage file or press q to quit");
+                                String answer = in.nextLine();
+                                if (answer.equals("q")) {
+                                    break;
+                                } else {
+                                    fileName = answer;
+                                }
+                            }
+                        } while (go);
                         break;
 
                     case "sa":

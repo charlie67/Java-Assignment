@@ -3,7 +3,9 @@ package uk.ac.aber.dcs.blockmotion.model;
 import uk.ac.aber.dcs.blockmotion.transformer.Transformer;
 
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -41,8 +43,9 @@ public class Footage implements IFootage {
     }
 
     @Override
-    public void load(String fn) {
+    public void load(String fn) throws IOException {
         try (Scanner infile = new Scanner(new FileReader(fn))) {
+            System.out.println("loading footage file");
             infile.useDelimiter(":|\r?\n|\r");
             numFrames = infile.nextInt();
             numRows = infile.nextInt();
@@ -65,13 +68,30 @@ public class Footage implements IFootage {
                 }
 
             }
-        } catch (IOException e) {
-            System.err.println("File not found, please try again.");
         }
     }
 
     @Override
     public void save(String fn) {
+        try (PrintWriter outfile = new PrintWriter(new FileWriter(fn))) {
+
+            outfile.println(numFrames);
+            outfile.println(numRows);
+
+            for (int z = 0; z < numFrames; z++) {
+
+                for (int i = 0; i < numRows; i++) {//rows is the same as columns so this works
+                    for (int j = 0; j<numRows; j++) {
+                        outfile.print(frames.get(z).getChar(i,j));
+                    }
+                    outfile.print('\n');
+                }
+
+            }
+
+        } catch (IOException e) {
+            System.err.println("File not found, please try again.");
+        }
 
     }
 
