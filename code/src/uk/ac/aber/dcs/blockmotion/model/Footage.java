@@ -98,6 +98,10 @@ public class Footage implements IFootage {
     @Override
     public void transform(Transformer t) {
 
+        for (IFrame f: frames){
+            t.transform(f);
+        }
+        //for each frame f, transform it using the supplied transformation
     }
 
     /**

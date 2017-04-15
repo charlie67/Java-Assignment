@@ -7,12 +7,5 @@ import uk.ac.aber.dcs.blockmotion.model.IFrame;
  */
 public class FlipVertical extends Transform implements Transformer {
 
-    @Override
-    public void transform(IFrame frame) {
-        /*
-        want the bottom row to be on the top
-         bottom row is numRows-1, top is 0
-         want to put
-         */
-    }
+
 }

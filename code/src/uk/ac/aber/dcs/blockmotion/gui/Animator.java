@@ -22,6 +22,9 @@ import javafx.stage.Stage;
 import uk.ac.aber.dcs.blockmotion.model.Footage;
 import uk.ac.aber.dcs.blockmotion.model.IFootage;
 import uk.ac.aber.dcs.blockmotion.model.IFrame;
+import uk.ac.aber.dcs.blockmotion.transformer.FlipVertical;
+import uk.ac.aber.dcs.blockmotion.transformer.SlideLeft;
+import uk.ac.aber.dcs.blockmotion.transformer.Transform;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -37,6 +40,7 @@ public class Animator extends Application {
     private Scene scene;
     private String fileName;
     private boolean transformationsDone = false;
+    private Transform transformer;
 
     //for edit menu slide numbers
     private int slideRightNumber = 1;
@@ -237,6 +241,8 @@ public class Animator extends Application {
                     break;
 
                 case "sl":
+                    transformer = new SlideLeft();
+                    footage.transform(transformer);
                     transformationsDone = true;
                     break;
 

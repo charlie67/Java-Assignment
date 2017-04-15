@@ -8,6 +8,7 @@ import java.io.PrintWriter;
  */
 public class Frame implements IFrame {
     private char[][] blocks;
+    private int numRows;
 
 
     @Override
@@ -16,7 +17,12 @@ public class Frame implements IFrame {
 
     @Override
     public int getNumRows() {
-        return 0;
+        return numRows;
+    }
+
+    @Override
+    public int setNumRows(int numRows){
+        this.
     }
 
     @Override
