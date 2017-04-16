@@ -8,13 +8,6 @@ import uk.ac.aber.dcs.blockmotion.model.IFrame;
  */
 public class Transform implements Transformer{
     int numRows;
-    int leftMostColumn = 0; //this is always 0
-    int rightMostColumn;
-
-    public void initialize(int rows){
-        numRows = rows;
-        rightMostColumn = numRows-1;
-    }
 
 
     @Override
