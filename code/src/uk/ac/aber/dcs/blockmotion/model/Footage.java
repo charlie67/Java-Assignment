@@ -59,11 +59,12 @@ public class Footage implements IFootage {
                 Frame fr = new Frame();
                 fr.setBlockSize(numRows);
                 frames.add(fr);
+                //the top of the file relates to the bottom of the frame
 
                 for (int i = 0; i < numRows; i++) {//rows is the same as columns so this works
                     String line = infile.nextLine();
                     for (int j = 0; j<numRows; j++) {
-                        frames.get(z).setChar(i, j, line.charAt(j));
+                        frames.get(z).setChar(numRows-1-i, j, line.charAt(j));
                     }
                 }
 

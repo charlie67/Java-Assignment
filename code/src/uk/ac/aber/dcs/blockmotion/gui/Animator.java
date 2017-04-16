@@ -116,11 +116,7 @@ public class Animator extends Application {
                                 footage.load(fileName);
                                 go = false;
                                 System.out.println("loaded footage for " + fileName);
-
-
-                                //my load function loads upside down so the footage needs to be flipped
-                                this.flipVertical();
-
+                                
                                 createGrid(footage.getNumRows());
 
                             } catch (IOException e) {
