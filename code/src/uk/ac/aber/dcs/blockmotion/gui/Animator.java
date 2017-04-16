@@ -5,7 +5,7 @@ package uk.ac.aber.dcs.blockmotion.gui;
  * need to update this file
  *
  * @author Chris Loftus  Charlie Robinson
- * @version 1.0 (29th March 2017)
+ * @version 16th April 2017
  */
 
 import javafx.application.Application;

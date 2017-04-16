@@ -3,7 +3,8 @@ package uk.ac.aber.dcs.blockmotion.transformer;
 import uk.ac.aber.dcs.blockmotion.model.IFrame;
 
 /**
- * Created by charl on 15/04/2017.
+ * @author Charlie Robinson
+ * @version 16.04.17
  */
 public class SlideLeft extends Transform implements Transformer {
     /*

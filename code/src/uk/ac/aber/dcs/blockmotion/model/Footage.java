@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 /**
  * @author Charlie Robinson
- * @version 13.4.17
+ * @version 16.4.17
  */
 public class Footage implements IFootage {
     private int numFrames;
