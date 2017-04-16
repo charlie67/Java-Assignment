@@ -22,10 +22,7 @@ import javafx.stage.Stage;
 import uk.ac.aber.dcs.blockmotion.model.Footage;
 import uk.ac.aber.dcs.blockmotion.model.IFootage;
 import uk.ac.aber.dcs.blockmotion.model.IFrame;
-import uk.ac.aber.dcs.blockmotion.transformer.FlipVertical;
-import uk.ac.aber.dcs.blockmotion.transformer.SlideLeft;
-import uk.ac.aber.dcs.blockmotion.transformer.SlideRight;
-import uk.ac.aber.dcs.blockmotion.transformer.Transform;
+import uk.ac.aber.dcs.blockmotion.transformer.*;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -243,25 +240,34 @@ public class Animator extends Application {
 
                 case "sl":
                     System.out.println("Sliding left");
+
                     transformer = new SlideLeft();
                     for (int i =0; i<slideLeftNumber; i++) {
                         footage.transform(transformer);
                     }
+
                     transformationsDone = true;
                     break;
 
                 case "sr":
-                    footage.printChar();
-                    System.out.println("Sliding Right");
+                    System.out.println("Sliding right");
+
                     transformer = new SlideRight();
                     for (int i =0; i<slideRightNumber; i++) {
                         footage.transform(transformer);
                     }
-                    footage.printChar();
+
                     transformationsDone = true;
                     break;
 
                 case "su":
+                    System.out.println("Sliding up");
+
+                    transformer = new SlideUp();
+                    for (int i =0; i<slideUpNumber; i++) {
+                        footage.transform(transformer);
+                    }
+
                     transformationsDone = true;
                     break;
 

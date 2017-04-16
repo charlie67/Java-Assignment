@@ -48,7 +48,6 @@ public class Frame implements IFrame {
     @Override
     public IFrame copy() {
         return this;
-        //does this work?
     }
 
     @Override

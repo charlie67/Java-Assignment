@@ -11,6 +11,8 @@ public class Transform implements Transformer{
     int numRows;
     int leftMostColumn = 0; //this is always 0
     int rightMostColumn;
+    int topRow;
+    int botRow;
     Frame tempFrame;
 
     private boolean initializeDone = false;
@@ -21,6 +23,8 @@ public class Transform implements Transformer{
             initializeDone = true;
             numRows = rows;
             rightMostColumn = numRows - 1;
+            botRow = 0;
+            topRow = numRows-1;
             tempFrame = new Frame();
             tempFrame.setBlockSize(numRows);
         }
