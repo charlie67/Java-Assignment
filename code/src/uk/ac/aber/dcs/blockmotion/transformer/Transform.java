@@ -13,11 +13,17 @@ public class Transform implements Transformer{
     int rightMostColumn;
     Frame tempFrame;
 
+    private boolean initializeDone = false;
+
     public void initialize(int rows){
-        numRows = rows;
-        rightMostColumn = numRows-1;
-        tempFrame = new Frame();
-        tempFrame.setBlockSize(numRows);
+        //need to make sure you can't initialize twice
+        if (!initializeDone) {
+            initializeDone = true;
+            numRows = rows;
+            rightMostColumn = numRows - 1;
+            tempFrame = new Frame();
+            tempFrame.setBlockSize(numRows);
+        }
     }
 
 
