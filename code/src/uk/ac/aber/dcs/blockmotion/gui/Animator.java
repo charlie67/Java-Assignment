@@ -24,6 +24,7 @@ import uk.ac.aber.dcs.blockmotion.model.IFootage;
 import uk.ac.aber.dcs.blockmotion.model.IFrame;
 import uk.ac.aber.dcs.blockmotion.transformer.FlipVertical;
 import uk.ac.aber.dcs.blockmotion.transformer.SlideLeft;
+import uk.ac.aber.dcs.blockmotion.transformer.SlideRight;
 import uk.ac.aber.dcs.blockmotion.transformer.Transform;
 
 import java.io.IOException;
@@ -250,6 +251,13 @@ public class Animator extends Application {
                     break;
 
                 case "sr":
+                    footage.printChar();
+                    System.out.println("Sliding Right");
+                    transformer = new SlideRight();
+                    for (int i =0; i<slideRightNumber; i++) {
+                        footage.transform(transformer);
+                    }
+                    footage.printChar();
                     transformationsDone = true;
                     break;
 

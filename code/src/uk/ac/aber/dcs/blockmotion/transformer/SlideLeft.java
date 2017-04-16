@@ -13,22 +13,23 @@ public class SlideLeft extends Transform implements Transformer {
      */
     @Override
     public void transform(IFrame frame){
-        super.initialize(frame.getNumRows());
+        super.initialize(frame.getNumRows(), frame);
 
         /*
         tempFrame = frame.copy();
         when this happens tempFrame seems to update with frame
-        */
+
 
         for(int i=0; i<super.numRows;i++){
             for(int j=0; j<super.numRows;j++){
                 super.tempFrame.setChar(i,j,frame.getChar(i,j));
             }
             //this should workaround the above problem
-            //however doing it this way is kinda wasteful an object doesn't need to be used
+            //however doing it this way is kinda wasteful because an object doesn't need to be used
         }
+        moved this into Transform super class
 
-        /*
+
         tempFrame is the one that is never changed just there to copy from so that it never change
 
         left mose frame has column 0

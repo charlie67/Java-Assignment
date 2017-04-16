@@ -15,7 +15,7 @@ public class Transform implements Transformer{
 
     private boolean initializeDone = false;
 
-    public void initialize(int rows){
+    public void initialize(int rows, IFrame frame){
         //need to make sure you can't initialize twice
         if (!initializeDone) {
             initializeDone = true;
@@ -23,6 +23,13 @@ public class Transform implements Transformer{
             rightMostColumn = numRows - 1;
             tempFrame = new Frame();
             tempFrame.setBlockSize(numRows);
+        }
+
+        for(int i=0; i<numRows;i++){
+            for(int j=0; j<numRows;j++){
+                tempFrame.setChar(i,j,frame.getChar(i,j));
+                //this should solve the problem discussed in slideLeft
+            }
         }
     }
 
