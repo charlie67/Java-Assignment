@@ -78,16 +78,20 @@ public class Footage implements IFootage {
             outfile.println(numFrames);
             outfile.println(numRows);
 
-            for (int z = 0; z < numFrames; z++) {
-
-                for (int i = 0; i < numRows; i++) {//rows is the same as columns so this works
-                    for (int j = 0; j<numRows; j++) {
-                        outfile.print(frames.get(z).getChar(i,j));
-                    }
-                    outfile.print('\n');
-                }
-
+            for(IFrame f: frames){
+                f.tofile(outfile);
             }
+
+//            for (int z = 0; z < numFrames; z++) {
+//
+//                for (int i = 0; i < numRows; i++) {//rows is the same as columns so this works
+//                    for (int j = 0; j<numRows; j++) {
+//                        outfile.print(frames.get(z).getChar(i,j));
+//                    }
+//                    outfile.print('\n');
+//                }
+//
+//            }
 
         } catch (IOException e) {
             System.err.println("File not found, please try again.");

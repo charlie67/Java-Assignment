@@ -26,6 +26,13 @@ public class Frame implements IFrame {
 
     @Override
     public void tofile(PrintWriter outfile) {
+        //TODO test this
+        for (int i = 0; i < numRows; i++) {//rows is the same as columns so this works
+            for (int j = 0; j<numRows; j++) {
+                outfile.print(getChar(i,j));
+            }
+            outfile.print('\n');
+        }
 
     }
 
@@ -47,7 +54,9 @@ public class Frame implements IFrame {
 
     @Override
     public void replace(IFrame f) {
-        //need to cast IFrame f to Frame? maybe
+        //cast f to a Frame and then
+        //this = f
+        //???
         //TODO frame.replace() method
     }
 
