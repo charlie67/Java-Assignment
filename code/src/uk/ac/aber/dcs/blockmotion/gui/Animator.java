@@ -242,12 +242,10 @@ public class Animator extends Application {
 
                 case "sl":
                     System.out.println("Sliding left");
-                    System.out.println("char before");
-                    footage.printChar();
                     transformer = new SlideLeft();
-                    footage.transform(transformer);
-                    System.out.println("footage after");
-                    footage.printChar();
+                    for (int i =0; i<slideLeftNumber; i++) {
+                        footage.transform(transformer);
+                    }
                     transformationsDone = true;
                     break;
 
