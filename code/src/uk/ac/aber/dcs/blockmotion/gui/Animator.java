@@ -272,6 +272,13 @@ public class Animator extends Application {
                     break;
 
                 case "sd":
+                    System.out.println("Sliding down");
+
+                    transformer = new SlideDown();
+                    for (int i =0; i<slideDownNumber; i++) {
+                        footage.transform(transformer);
+                    }
+
                     transformationsDone = true;
                     break;
 
