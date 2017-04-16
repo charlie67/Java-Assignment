@@ -26,7 +26,7 @@ public class Frame implements IFrame {
 
     @Override
     public void tofile(PrintWriter outfile) {
-        for (int i = 0; i < numRows; i++) {//rows is the same as columns so this works
+        for (int i = numRows-1; i >=0; i--) {//rows is the same as columns so this works
             for (int j = 0; j<numRows; j++) {
                 outfile.print(getChar(i,j));
             }

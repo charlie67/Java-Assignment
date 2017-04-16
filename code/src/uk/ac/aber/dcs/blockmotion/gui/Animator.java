@@ -116,7 +116,7 @@ public class Animator extends Application {
                                 footage.load(fileName);
                                 go = false;
                                 System.out.println("loaded footage for " + fileName);
-                                
+
                                 createGrid(footage.getNumRows());
 
                             } catch (IOException e) {
