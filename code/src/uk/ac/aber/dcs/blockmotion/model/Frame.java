@@ -4,7 +4,7 @@ import java.io.PrintWriter;
 
 /**
  * @author Charlie Robinson
- * @verison 13.4.17
+ * @verison 16.4.17
  */
 public class Frame implements IFrame {
     private char[][] blocks;
@@ -18,11 +18,7 @@ public class Frame implements IFrame {
     @Override
     public int getNumRows() {
         return numRows;
-    }
 
-    @Override
-    public int setNumRows(int numRows){
-        this.
     }
 
     @Override
@@ -55,6 +51,7 @@ public class Frame implements IFrame {
      * @param size the number of rows or columns
      */
     public void setBlockSize(int size){
+        numRows = size;
         blocks = new char[size][size];
     }
 }

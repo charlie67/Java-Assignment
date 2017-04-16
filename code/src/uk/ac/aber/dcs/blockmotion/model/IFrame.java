@@ -24,11 +24,6 @@ public interface IFrame {
     public abstract int getNumRows();
 
     /**
-     *
-     */
-    public abstract void setNumRows(int numRows);
-
-    /**
      * Writes the frame to the given open outfile
      * @param outfile the open file to write to
      * @throws IllegalArgumentException if outfile is null or closed
