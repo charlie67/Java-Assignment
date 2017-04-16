@@ -118,7 +118,9 @@ public class Animator extends Application {
                                 System.out.println("loaded footage for " + fileName);
 
 
-                                //TODO footage needs to be flipped vertically because atm it's upside down
+                                //my load function loads upside down so the footage needs to be flipped
+                                this.flipVertical();
+
                                 createGrid(footage.getNumRows());
 
                             } catch (IOException e) {
@@ -235,6 +237,10 @@ public class Animator extends Application {
                     break;
 
                 case "fv":
+                    System.out.println("Flipping vertically");
+
+                    this.flipVertical();
+
                     transformationsDone = true;
                     break;
 
@@ -501,5 +507,9 @@ public class Animator extends Application {
         System.out.println("i = 0, j = 2");
         System.out.println(footage.getFrame(0).getChar(0,2));
     }
-}
 
+    public void flipVertical(){
+        transformer = new FlipVertical();
+        footage.transform(transformer);
+    }
+}
