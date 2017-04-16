@@ -25,6 +25,7 @@ public class SlideLeft extends Transform implements Transformer {
                 super.tempFrame.setChar(i,j,frame.getChar(i,j));
             }
             //this should workaround the above problem
+            //however doing it this way is kinda wasteful an object doesn't need to be used
         }
 
         /*
