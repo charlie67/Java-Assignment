@@ -1,6 +1,5 @@
 1
-4
-rblb
-brbb
-blbb
-bbbb
+3
+rbl
+brb
+blb
