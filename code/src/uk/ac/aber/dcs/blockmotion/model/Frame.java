@@ -38,12 +38,14 @@ public class Frame implements IFrame {
 
     @Override
     public IFrame copy() {
-        return null;
+        return this;
+        //does this work?
     }
 
     @Override
     public void replace(IFrame f) {
-
+        //need to cast IFrame f to Frame? maybe
+        //TODO frame.replace() method
     }
 
     /**
