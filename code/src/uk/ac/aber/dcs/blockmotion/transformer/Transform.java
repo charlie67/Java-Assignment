@@ -1,5 +1,6 @@
 package uk.ac.aber.dcs.blockmotion.transformer;
 
+import uk.ac.aber.dcs.blockmotion.model.Frame;
 import uk.ac.aber.dcs.blockmotion.model.IFrame;
 
 /**
@@ -10,10 +11,13 @@ public class Transform implements Transformer{
     int numRows;
     int leftMostColumn = 0; //this is always 0
     int rightMostColumn;
+    Frame tempFrame;
 
     public void initialize(int rows){
         numRows = rows;
         rightMostColumn = numRows-1;
+        tempFrame = new Frame();
+        tempFrame.setBlockSize(numRows);
     }
 
 

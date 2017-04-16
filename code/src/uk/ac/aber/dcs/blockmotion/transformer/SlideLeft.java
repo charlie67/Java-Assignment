@@ -15,8 +15,17 @@ public class SlideLeft extends Transform implements Transformer {
     public void transform(IFrame frame){
         super.initialize(frame.getNumRows());
 
-        IFrame tempFrame = new Frame();
+        /*
         tempFrame = frame.copy();
+        when this happens tempFrame seems to update with frame
+        */
+
+        for(int i=0; i<super.numRows;i++){
+            for(int j=0; j<super.numRows;j++){
+                super.tempFrame.setChar(i,j,frame.getChar(i,j));
+            }
+            //this should workaround the above problem
+        }
 
         /*
         tempFrame is the one that is never changed just there to copy from so that it never change
@@ -55,18 +64,12 @@ public class SlideLeft extends Transform implements Transformer {
 
                 if(j+1>super.rightMostColumn){
                     //use 0 as the column because that's what comes after the highest column
-                    frame.setChar(i, j, tempFrame.getChar(i, 0));
+                    frame.setChar(i, j, super.tempFrame.getChar(i, super.leftMostColumn));
                 } else {
 
-                    frame.setChar(i, j, tempFrame.getChar(i, j + 1));
+                    frame.setChar(i, j, super.tempFrame.getChar(i, j + 1));
                 }
             }
         }
-
-
-
-
-
-
     }
 }

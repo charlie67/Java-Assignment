@@ -10,6 +10,9 @@ public class Frame implements IFrame {
     private char[][] blocks;
     private int numRows;
 
+    public Frame(){
+
+    }
 
     @Override
     public void insertLines(String[] lines) {
