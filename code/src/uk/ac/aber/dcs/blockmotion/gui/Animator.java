@@ -24,6 +24,8 @@ import uk.ac.aber.dcs.blockmotion.model.IFootage;
 import uk.ac.aber.dcs.blockmotion.model.IFrame;
 import uk.ac.aber.dcs.blockmotion.transformer.*;
 
+import javax.swing.*;
+import java.awt.*;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -229,13 +231,19 @@ public class Animator extends Application {
 
             switch (input) {
                 case "fh":
+                    System.out.println("Flipping horizontally");
+
+                    transformer = new FlipHorizontal();
+                    footage.transform(transformer);
+
                     transformationsDone = true;
                     break;
 
                 case "fv":
                     System.out.println("Flipping vertically");
 
-                    this.flipVertical();
+                    transformer = new FlipVertical();
+                    footage.transform(transformer);
 
                     transformationsDone = true;
                     break;
@@ -502,10 +510,5 @@ public class Animator extends Application {
 
         System.out.println("i = 0, j = 2");
         System.out.println(footage.getFrame(0).getChar(0,2));
-    }
-
-    public void flipVertical(){
-        transformer = new FlipVertical();
-        footage.transform(transformer);
     }
 }
