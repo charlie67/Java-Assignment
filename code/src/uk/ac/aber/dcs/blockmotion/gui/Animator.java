@@ -12,6 +12,7 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
@@ -44,10 +45,7 @@ public class Animator extends Application{
     private int slideUpNumber = 1;
 
     //gui stuff
-    private Button load;
     private Stage window = new Stage();
-
-    private Scene sceneLoad, sceneSave;
 
 
     private Scanner in = new Scanner(System.in);
@@ -71,7 +69,7 @@ public class Animator extends Application{
         // following comments
         stage = primaryStage;
 
-//        runGui();
+        runGui();
 
 
         // In this version of the app we will drive
@@ -126,7 +124,7 @@ public class Animator extends Application{
                                 System.out.println("loaded footage for " + fileName);
 
                                 createGrid(footage.getNumRows());
-//                                updateWindowTitle();
+                                updateWindowTitle();
 
                             } catch (IOException e) {
                                 System.err.println("Could not open file: " + fileName +
@@ -341,6 +339,50 @@ public class Animator extends Application{
     private void updateWindowTitle(){
         Platform.runLater(() -> {
             window.setTitle("Blockmotion " + fileName);
+        });
+    }
+
+    private void runGui(){
+        Platform.runLater(() -> {
+            Button fileNameButton;
+            Button loadAnimationButton;
+            Button transformMenuButton;
+            Button editMenuButton;
+
+            window.setTitle("Blockmotion " + fileName);
+
+            //set file name button
+            fileNameButton = new Button();
+            fileNameButton.setText("Set file name");
+
+            fileNameButton.setOnAction(e -> {
+                SetFileName.display();
+            });
+
+            //load button
+            loadAnimationButton = new Button();
+            loadAnimationButton.setText("Load");
+            loadAnimationButton.setOnAction(e -> {
+                try {
+                    footage = new Footage();
+                    fileName = SetFileName.getFn();
+                    footage.load(fileName);
+
+                    createGrid(footage.getNumRows());
+                    updateWindowTitle();
+
+                } catch (IOException e1){
+                    AlertBox.display("Load Error", "File not found, please enter a new name and try again.");
+                }
+            });
+
+
+            HBox layout = new HBox();
+            layout.getChildren().addAll(fileNameButton, loadAnimationButton);
+
+            Scene scene = new Scene(layout, 200, 200);
+            window.setScene(scene);
+            window.show();
         });
     }
 

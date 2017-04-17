@@ -1,11 +1,12 @@
 package uk.ac.aber.dcs.blockmotion.gui;
 
 import javafx.application.Platform;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -13,16 +14,21 @@ import javafx.stage.Stage;
  * @author Charlie Robinson
  * @version 17.4.17
  */
-public class LoadWindow {
+public class SetFileName {
     private static String fn;
     private static boolean shouldLoad;
 
-    public static boolean display(){
+    public static void display(){
         Platform.runLater(() -> {
-//        FileChooser fileChooser = new FileChooser();
             Stage window = new Stage();
 
             window.setTitle("Load");
+            fn = "";
+
+            GridPane grid = new GridPane();
+            grid.setPadding(new Insets(10));
+            grid.setVgap(8);
+            grid.setHgap(10);
 
             //make the load window the only window that can be clicked on
             window.initModality(Modality.APPLICATION_MODAL);
@@ -46,15 +52,19 @@ public class LoadWindow {
                 window.close();
             });
 
-            HBox layout = new HBox(10);
-            layout.getChildren().addAll(instructions,cancel, fileName, ok);
+            //sets where the items will be in the grid
+            GridPane.setConstraints(instructions, 0,0);
+            GridPane.setConstraints(fileName, 0, 1);
+            GridPane.setConstraints(cancel,0,2);
+            GridPane.setConstraints(ok,1,2);
 
-            Scene scene = new Scene(layout);
+            grid.getChildren().addAll(instructions,cancel, fileName, ok);
+
+            Scene scene = new Scene(grid);
 
             window.setScene(scene);
             window.showAndWait();
         });
-        return shouldLoad;
     }
 
     public static String getFn() {
