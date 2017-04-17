@@ -13,10 +13,7 @@ import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.layout.GridPane;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import uk.ac.aber.dcs.blockmotion.model.Footage;
@@ -24,21 +21,19 @@ import uk.ac.aber.dcs.blockmotion.model.IFootage;
 import uk.ac.aber.dcs.blockmotion.model.IFrame;
 import uk.ac.aber.dcs.blockmotion.transformer.*;
 
-import javax.swing.*;
-import java.awt.*;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Animator extends Application {
+public class Animator extends Application{
 
     private Button[][] gridArray;
     private GridPane grid;
     private Thread animation;
     private boolean doRun;
-    private IFootage footage = new Footage();
+    private IFootage footage;
     private Stage stage;
     private Scene scene;
-    private String fileName;
+    private String fileName = "";
     private boolean transformationsDone = false;
     private Transform transformer;
 
@@ -47,6 +42,13 @@ public class Animator extends Application {
     private int slideLeftNumber = 1;
     private int slideDownNumber = 1;
     private int slideUpNumber = 1;
+
+    //gui stuff
+    private Button load;
+    private Stage window = new Stage();
+
+    private Scene sceneLoad, sceneSave;
+
 
     private Scanner in = new Scanner(System.in);
 
@@ -68,6 +70,9 @@ public class Animator extends Application {
         // I'll look more at this after Easter, but please read the
         // following comments
         stage = primaryStage;
+
+//        runGui();
+
 
         // In this version of the app we will drive
         // the app using a command line menu.
@@ -115,11 +120,13 @@ public class Animator extends Application {
                         do {
                             go = true;
                             try {
+                                footage = new Footage();
                                 footage.load(fileName);
                                 go = false;
                                 System.out.println("loaded footage for " + fileName);
 
                                 createGrid(footage.getNumRows());
+//                                updateWindowTitle();
 
                             } catch (IOException e) {
                                 System.err.println("Could not open file: " + fileName +
@@ -158,6 +165,11 @@ public class Animator extends Application {
 
                     case "e":
                         editMenu();
+                        break;
+
+                    case "gui":
+                        runGui();
+
                         break;
 
                     case "q":
@@ -331,6 +343,11 @@ public class Animator extends Application {
 
     }
 
+    private void updateWindowTitle(){
+        Platform.runLater(() -> {
+            window.setTitle("Blockmotion " + fileName);
+        });
+    }
 
     // An example method that you might like to call from your
     // menu. Whenever you need to do something in the GUI thread

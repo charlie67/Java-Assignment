@@ -18,9 +18,6 @@ public class Footage implements IFootage {
     private int numRows; //rows are the same as columns
     private ArrayList<IFrame> frames = new ArrayList<IFrame>();
 
-    public Footage() {
-
-    }
 
     @Override
     public int getNumFrames() {
@@ -45,6 +42,7 @@ public class Footage implements IFootage {
     @Override
     public void load(String fn) throws IOException {
         try (Scanner infile = new Scanner(new FileReader(fn))) {
+            frames.clear();
             System.out.println("loading footage file");
             infile.useDelimiter(":|\r?\n|\r");
             numFrames = infile.nextInt();

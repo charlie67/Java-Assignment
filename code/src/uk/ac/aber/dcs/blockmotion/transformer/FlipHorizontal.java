@@ -3,7 +3,7 @@ package uk.ac.aber.dcs.blockmotion.transformer;
 import uk.ac.aber.dcs.blockmotion.model.IFrame;
 
 /**
- * @author Charlie
+ * @author Charlie Robinson
  * @version 17.4.17
  */
 public class FlipHorizontal extends Transform implements Transformer{
