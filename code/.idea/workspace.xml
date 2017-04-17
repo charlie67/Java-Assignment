@@ -60,14 +60,22 @@
       <file leaf-file-name="Animator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/Animator.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="2171">
               <caret line="464" column="32" lean-forward="false" selection-start-line="464" selection-start-column="32" selection-end-line="464" selection-end-column="32" />
+=======
+            <state relative-caret-position="544">
+              <caret line="343" column="5" lean-forward="false" selection-start-line="343" selection-start-column="5" selection-end-line="343" selection-end-column="5" />
+>>>>>>> parent of be9bf63... Complete basics of assignment
               <folding>
                 <element signature="method#main#0;class#Animator#0" expanded="false" />
                 <element signature="e#1873#1946#0" expanded="false" />
                 <element signature="method#saveFootage#0;class#Animator#0" expanded="false" />
                 <element signature="method#editMenu#0;class#Animator#0" expanded="false" />
+<<<<<<< HEAD
                 <element signature="method#runGui#0;class#Animator#0" expanded="false" />
+=======
+>>>>>>> parent of be9bf63... Complete basics of assignment
                 <element signature="method#createGrid#0;class#Animator#0" expanded="false" />
                 <element signature="method#createGrid#1;class#Animator#0" expanded="false" />
                 <element signature="method#runAnimation#0;class#Animator#0" expanded="false" />
@@ -324,6 +332,26 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.Animator">
+    <configuration default="false" name="Animator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="uk.ac.aber.dcs.blockmotion.gui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="uk.ac.aber.dcs.blockmotion.gui.Animator" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="blockmotion-template" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -728,29 +756,14 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <configuration default="false" name="Animator" type="Application" factoryName="Application" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="uk.ac.aber.dcs.blockmotion.gui.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="uk.ac.aber.dcs.blockmotion.gui.Animator" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="blockmotion-template" />
-      <envs />
-      <method />
-    </configuration>
     <list size="1">
       <item index="0" class="java.lang.String" itemvalue="Application.Animator" />
     </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Application.Animator" />
+      </list>
+    </recent_temporary>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="DEPLOY" value="true" />
@@ -815,12 +828,20 @@
       <workItem from="1492309039214" duration="17659000" />
       <workItem from="1492376353647" duration="5227000" />
       <workItem from="1492389868132" duration="8247000" />
+<<<<<<< HEAD
       <workItem from="1492436092125" duration="6032000" />
+=======
+      <workItem from="1492436092125" duration="301000" />
+>>>>>>> parent of be9bf63... Complete basics of assignment
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="166018000" />
+=======
+    <option name="totallyTimeSpent" value="160287000" />
+>>>>>>> parent of be9bf63... Complete basics of assignment
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1376,14 +1397,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/Animator.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="2171">
           <caret line="464" column="32" lean-forward="false" selection-start-line="464" selection-start-column="32" selection-end-line="464" selection-end-column="32" />
+=======
+        <state relative-caret-position="544">
+          <caret line="343" column="5" lean-forward="false" selection-start-line="343" selection-start-column="5" selection-end-line="343" selection-end-column="5" />
+>>>>>>> parent of be9bf63... Complete basics of assignment
           <folding>
             <element signature="method#main#0;class#Animator#0" expanded="false" />
             <element signature="e#1873#1946#0" expanded="false" />
             <element signature="method#saveFootage#0;class#Animator#0" expanded="false" />
             <element signature="method#editMenu#0;class#Animator#0" expanded="false" />
+<<<<<<< HEAD
             <element signature="method#runGui#0;class#Animator#0" expanded="false" />
+=======
+>>>>>>> parent of be9bf63... Complete basics of assignment
             <element signature="method#createGrid#0;class#Animator#0" expanded="false" />
             <element signature="method#createGrid#1;class#Animator#0" expanded="false" />
             <element signature="method#runAnimation#0;class#Animator#0" expanded="false" />

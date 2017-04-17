@@ -165,6 +165,11 @@ public class Animator extends Application{
                         editMenu();
                         break;
 
+                    case "gui":
+                        runGui();
+
+                        break;
+
                     case "q":
                         if (transformationsDone){
                             System.out.println("Do you want to save first (y/n)?");
