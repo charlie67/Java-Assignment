@@ -11,6 +11,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
+ * This was used to set the file name but it's no longer used because I couldn't figure out how to properly get the file name that was set when the ok button was pressed.
  * @author Charlie Robinson
  * @version 17.4.17
  */

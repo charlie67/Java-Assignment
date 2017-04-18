@@ -5,16 +5,14 @@ package uk.ac.aber.dcs.blockmotion.gui;
  * need to update this file
  *
  * @author Chris Loftus  Charlie Robinson
- * @version 16th April 2017
+ * @version 18th April 2017
  */
 
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -25,6 +23,7 @@ import uk.ac.aber.dcs.blockmotion.model.Footage;
 import uk.ac.aber.dcs.blockmotion.model.IFootage;
 import uk.ac.aber.dcs.blockmotion.model.IFrame;
 import uk.ac.aber.dcs.blockmotion.transformer.*;
+import uk.ac.aber.dcs.blockmotion.gui.TransformMenu;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -169,9 +168,8 @@ public class Animator extends Application{
                         editMenu();
                         break;
 
-//                    case "gui":
-//                        runGui();
-//                        break;
+                    case "ae":
+                        break;
 
                     case "q":
                         if (transformationsDone){
@@ -451,6 +449,14 @@ public class Animator extends Application{
                 stateLabel.setText("Current state: Not Running");
             });
 
+            //transform button
+            transformMenuButton = new Button();
+            transformMenuButton.setText("Transform Menu");
+            transformMenuButton.setOnAction(event -> {
+                TransformMenu transformMenu = new TransformMenu();
+                transformMenu.display(footage);
+            });
+
             /*sets all the items on the grid
 
             The code to center the items came from
@@ -484,8 +490,12 @@ public class Animator extends Application{
             GridPane.setConstraints(stopAnimationButton, 1, 2);
             GridPane.setHalignment(stopAnimationButton, HPos.CENTER);
 
+            GridPane.setConstraints(transformMenuButton, 0, 3);
+            GridPane.setHalignment(transformMenuButton, HPos.CENTER);
 
-            grid.getChildren().addAll(fileNameButton, loadAnimationButton, currentFileNameLabel, saveAnimationButton, stateLabel, fileNameTextField, loadedLabel, runAnimationButton, stopAnimationButton);
+
+            grid.getChildren().addAll(fileNameButton, loadAnimationButton, currentFileNameLabel, saveAnimationButton,
+                    stateLabel, fileNameTextField, loadedLabel, runAnimationButton, stopAnimationButton, transformMenuButton);
 
             Scene scene = new Scene(grid);
             window.setScene(scene);
