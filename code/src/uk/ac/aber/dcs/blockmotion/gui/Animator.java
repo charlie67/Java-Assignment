@@ -10,10 +10,14 @@ package uk.ac.aber.dcs.blockmotion.gui;
 
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.geometry.HPos;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -124,7 +128,7 @@ public class Animator extends Application{
                                 System.out.println("loaded footage for " + fileName);
 
                                 createGrid(footage.getNumRows());
-                                updateWindowTitle();
+//                                updateWindowTitle();
 
                             } catch (IOException e) {
                                 System.err.println("Could not open file: " + fileName +
@@ -165,10 +169,9 @@ public class Animator extends Application{
                         editMenu();
                         break;
 
-                    case "gui":
-                        runGui();
-
-                        break;
+//                    case "gui":
+//                        runGui();
+//                        break;
 
                     case "q":
                         if (transformationsDone){
@@ -351,41 +354,140 @@ public class Animator extends Application{
         Platform.runLater(() -> {
             Button fileNameButton;
             Button loadAnimationButton;
+            Button saveAnimationButton;
+            Button runAnimationButton;
+            Button stopAnimationButton;
             Button transformMenuButton;
             Button editMenuButton;
 
+            TextField fileNameTextField = new TextField();
+
+            String unloaded = "No footage loaded";
+
             window.setTitle("Blockmotion " + fileName);
+
+            //grid
+            GridPane grid = new GridPane();
+            grid.setPadding(new Insets(10));
+            grid.setVgap(8);
+            grid.setHgap(10);
+
+            //File name information label
+            Label currentFileNameLabel = new Label();
+            currentFileNameLabel.setText("Current file name: " + fileName);
+
+            //File name information label
+            Label stateLabel = new Label();
+            stateLabel.setText("Current state: Not Running");
+
+            //loaded information label
+            Label loadedLabel = new Label();
+            loadedLabel.setText(unloaded);
 
             //set file name button
             fileNameButton = new Button();
-            fileNameButton.setText("Set file name");
+            fileNameButton.setText("Set File Name");
 
             fileNameButton.setOnAction(e -> {
-                SetFileName.display();
+                fileName = fileNameTextField.getText();
+                currentFileNameLabel.setText("Current file name: " + fileName);
             });
+
 
             //load button
             loadAnimationButton = new Button();
             loadAnimationButton.setText("Load");
             loadAnimationButton.setOnAction(e -> {
+
+                //set the filename in case set file name button not pressed
+                fileName = fileNameTextField.getText();
+                currentFileNameLabel.setText("Current file name: " + fileName);
+
                 try {
                     footage = new Footage();
-                    fileName = SetFileName.getFn();
                     footage.load(fileName);
 
                     createGrid(footage.getNumRows());
                     updateWindowTitle();
+                    loadedLabel.setText(fileName + " is loaded");
 
-                } catch (IOException e1){
-                    AlertBox.display("Load Error", "File not found, please enter a new name and try again.");
+                } catch (IOException eGuiLoad){
+                    AlertBox.display("Load Error", fileName + " not found, please enter a new name and try again.");
                 }
             });
 
+            //save button
+            saveAnimationButton = new Button();
+            saveAnimationButton.setText("Save");
+            saveAnimationButton.setOnAction(e -> {
+                fileName = fileNameTextField.getText();
+                try {
+                    if ( !( fileName.equals("") || fileName.equals(null) ) ){
+                        footage.save(fileName);
+                        AlertBox.display("Saved", "Saved to " + fileName);
+                        //dont want to save if the fileName is blank or unset
+                    } else {
+                        AlertBox.display("Save Error", "Set the file name first");
+                    }
 
-            HBox layout = new HBox();
-            layout.getChildren().addAll(fileNameButton, loadAnimationButton);
+                } catch (IOException eGuiSave){
+                    AlertBox.display("Save Error", fileName + " not found, please enter a new name and try again");
+                }
+            });
 
-            Scene scene = new Scene(layout, 200, 200);
+            //run button
+            runAnimationButton = new Button();
+            runAnimationButton.setText("Run Animation");
+            runAnimationButton.setOnAction(e -> {
+                runAnimation();
+                stateLabel.setText("Current state: Running");
+            });
+
+            //stop running button
+            stopAnimationButton = new Button();
+            stopAnimationButton.setText("Stop Animation");
+            stopAnimationButton.setOnAction(e -> {
+                terminateAnimation();
+                stateLabel.setText("Current state: Not Running");
+            });
+
+            /*sets all the items on the grid
+
+            The code to center the items came from
+            https://stackoverflow.com/questions/35438104/javafx-alignment-of-label-in-gridpane
+            18.4.17
+             */
+            GridPane.setConstraints(fileNameButton,0,0);
+            GridPane.setHalignment(fileNameButton, HPos.CENTER);
+
+            GridPane.setConstraints(fileNameTextField,1,0);
+            GridPane.setHalignment(fileNameTextField, HPos.CENTER);
+
+            GridPane.setConstraints(currentFileNameLabel,2,0);
+            GridPane.setHalignment(currentFileNameLabel, HPos.CENTER);
+
+            GridPane.setConstraints(loadedLabel,2,1);
+            GridPane.setHalignment(loadedLabel, HPos.CENTER);
+
+            GridPane.setConstraints(loadAnimationButton,0,1);
+            GridPane.setHalignment(loadAnimationButton, HPos.CENTER);
+
+            GridPane.setConstraints(saveAnimationButton,1,1);
+            GridPane.setHalignment(saveAnimationButton, HPos.CENTER);
+
+            GridPane.setConstraints(stateLabel,2,2);
+            GridPane.setHalignment(stateLabel, HPos.CENTER);
+
+            GridPane.setConstraints(runAnimationButton, 0, 2);
+            GridPane.setHalignment(runAnimationButton, HPos.CENTER);
+
+            GridPane.setConstraints(stopAnimationButton, 1, 2);
+            GridPane.setHalignment(stopAnimationButton, HPos.CENTER);
+
+
+            grid.getChildren().addAll(fileNameButton, loadAnimationButton, currentFileNameLabel, saveAnimationButton, stateLabel, fileNameTextField, loadedLabel, runAnimationButton, stopAnimationButton);
+
+            Scene scene = new Scene(grid);
             window.setScene(scene);
             window.show();
         });
@@ -421,8 +523,10 @@ public class Animator extends Application{
     // all very theatrical.
     private void createGrid(int numRows) {
 
-        /*had to write this platform.runLater thing because otherwise I was getting a
-        java.lang.IllegalStateException: Not on FX application thread; currentThread = Thread-4
+        /*had to write this platform.runLater thing because otherwise I was getting
+
+        java.lang.IllegalStateException: Not on FX application thread;
+        currentThread = Thread-4
         */
         Platform.runLater(() -> {
             // Creates a grid so that we can display the animation. We will see

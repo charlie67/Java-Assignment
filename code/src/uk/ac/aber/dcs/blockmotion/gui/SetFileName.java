@@ -23,7 +23,6 @@ public class SetFileName {
             Stage window = new Stage();
 
             window.setTitle("Load");
-            fn = "";
 
             GridPane grid = new GridPane();
             grid.setPadding(new Insets(10));

@@ -16,8 +16,7 @@ public class SlideLeft extends Transform implements Transformer {
         super.initialize(frame.getNumRows(), frame);
 
         /*
-        tempFrame = frame.copy();
-        when this happens tempFrame seems to update with frame
+
 
 
         for(int i=0; i<super.numRows;i++){

@@ -12,7 +12,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/code$Animator.coverage" NAME="Animator Coverage Results" MODIFIED="1492109603888" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/code$Animator.coverage" NAME="Animator Coverage Results" MODIFIED="1492471852901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>uk.ac.aber.dcs.blockmotion.gui.*</FILTER>
     </SUITE>
   </component>
@@ -28,41 +28,97 @@
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
   </component>
+  <component name="DockManager">
+    <window id="2">
+      <content type="file-editors">
+        <state>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+            <file leaf-file-name="Animator.java" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/Animator.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="340">
+                    <caret line="164" column="38" lean-forward="false" selection-start-line="164" selection-start-column="38" selection-end-line="164" selection-end-column="38" />
+                    <folding>
+                      <element signature="method#main#0;class#Animator#0" expanded="false" />
+                      <element signature="method#start#0;class#Animator#0" expanded="false" />
+                      <element signature="method#saveFootage#0;class#Animator#0" expanded="false" />
+                      <element signature="method#editMenu#0;class#Animator#0" expanded="false" />
+                      <element signature="method#updateWindowTitle#0;class#Animator#0" expanded="false" />
+                      <element signature="method#createGrid#0;class#Animator#0" expanded="false" />
+                      <element signature="method#createGrid#1;class#Animator#0" expanded="false" />
+                      <element signature="method#runAnimation#0;class#Animator#0" expanded="false" />
+                      <element signature="method#printEditMenu#0;class#Animator#0" expanded="false" />
+                      <element signature="method#printMenu#0;class#Animator#0" expanded="false" />
+                      <element signature="method#layoutTest#0;class#Animator#0" expanded="false" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="SetFileName.java" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/SetFileName.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="340">
+                    <caret line="37" column="12" lean-forward="false" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="49" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="blockmotion-text-only" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Animator.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/Animator.java">
+      <file leaf-file-name="Frame.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/model/Frame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="343" column="5" lean-forward="false" selection-start-line="343" selection-start-column="5" selection-end-line="343" selection-end-column="5" />
+            <state relative-caret-position="0">
+              <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
               <folding>
-                <element signature="method#main#0;class#Animator#0" expanded="false" />
-                <element signature="e#1904#1977#0" expanded="false" />
-                <element signature="method#saveFootage#0;class#Animator#0" expanded="false" />
-                <element signature="method#editMenu#0;class#Animator#0" expanded="false" />
-                <element signature="method#createGrid#0;class#Animator#0" expanded="false" />
-                <element signature="method#createGrid#1;class#Animator#0" expanded="false" />
-                <element signature="method#runAnimation#0;class#Animator#0" expanded="false" />
-                <element signature="method#printEditMenu#0;class#Animator#0" expanded="false" />
-                <element signature="method#printMenu#0;class#Animator#0" expanded="false" />
-                <element signature="method#layoutTest#0;class#Animator#0" expanded="false" />
+                <element signature="method#Frame#0;class#Frame#0" expanded="false" />
+                <element signature="e#750#751#0" expanded="false" />
+                <element signature="e#785#786#0" expanded="false" />
+                <element signature="e#849#850#0" expanded="false" />
+                <element signature="e#882#883#0" expanded="false" />
+                <element signature="e#924#925#0" expanded="false" />
+                <element signature="e#951#952#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoadWindow.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/LoadWindow.java">
+      <file leaf-file-name="Animator.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/Animator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="37" column="35" lean-forward="false" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
+            <state relative-caret-position="669">
+              <caret line="483" column="58" lean-forward="false" selection-start-line="483" selection-start-column="58" selection-end-line="483" selection-end-column="58" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#main#0;class#Animator#0" expanded="false" />
+                <element signature="method#editMenu#0;class#Animator#0" expanded="false" />
+                <element signature="method#updateWindowTitle#0;class#Animator#0" expanded="false" />
+                <element signature="e#12424#12580#0" expanded="false" />
+                <element signature="e#12752#13443#0" expanded="false" />
+                <element signature="e#13614#14308#0" expanded="false" />
+                <element signature="e#14484#14598#0" expanded="false" />
+                <element signature="method#runAnimation#0;class#Animator#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SlideLeft.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/transformer/SlideLeft.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-216">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -70,34 +126,12 @@
       <file leaf-file-name="Footage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/model/Footage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="44" column="27" lean-forward="false" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
+            <state relative-caret-position="770">
+              <caret line="123" column="1" lean-forward="false" selection-start-line="123" selection-start-column="1" selection-end-line="123" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="1.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/1.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="3" lean-forward="false" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Frame.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/model/Frame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1037">
-              <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-              <folding>
-                <element signature="method#Frame#0;class#Frame#0" expanded="false" />
-                <element signature="e#849#850#0" expanded="true" />
-                <element signature="e#882#883#0" expanded="true" />
+                <element signature="e#720#721#0" expanded="true" />
+                <element signature="e#758#759#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -110,8 +144,8 @@
       <list>
         <option value="JavaFXApplication" />
         <option value="Interface" />
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -144,7 +178,6 @@
         <option value="$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/model/IFootage.java" />
         <option value="$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/model/IFrame.java" />
         <option value="$PROJECT_DIR$/1.txt" />
-        <option value="$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/transformer/SlideLeft.java" />
         <option value="$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/transformer/SlideRight.java" />
         <option value="$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/transformer/Transform.java" />
         <option value="$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/transformer/SlideUp.java" />
@@ -157,8 +190,11 @@
         <option value="$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/EventHandler.java" />
         <option value="$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/Handler.java" />
         <option value="$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/transformer/FlipHorizontal.java" />
-        <option value="$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/model/Footage.java" />
         <option value="$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/LoadWindow.java" />
+        <option value="$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/SetFileName.java" />
+        <option value="$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/transformer/SlideLeft.java" />
+        <option value="$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/RunningStates.java" />
+        <option value="$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/model/Footage.java" />
         <option value="$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/Animator.java" />
       </list>
     </option>
@@ -194,7 +230,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -224,6 +260,32 @@
               <option name="myItemId" value="blockmotion" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="transformer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blockmotion" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -249,7 +311,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -793,11 +855,13 @@
       <workItem from="1492376353647" duration="5227000" />
       <workItem from="1492389868132" duration="8247000" />
       <workItem from="1492436092125" duration="301000" />
+      <workItem from="1492450820365" duration="8310000" />
+      <workItem from="1492474285286" duration="3573000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160287000" />
+    <option name="totallyTimeSpent" value="172170000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -821,20 +885,20 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39534885" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39869988" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39869988" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14285715" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14605543" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3943662" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -873,7 +937,7 @@
           <option name="timeStamp" value="64" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="68" />
+      <option name="time" value="69" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -882,14 +946,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scotty.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/model/Footage.java" />
     <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/model/Frame.java" />
     <entry file="file://$PROJECT_DIR$/src/styling.css" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home/javafx-src.zip!/javafx/beans/property/StringPropertyBase.java" />
@@ -962,13 +1018,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="44" lean-forward="false" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/transformer/SlideLeft.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="628">
-          <caret line="66" column="22" lean-forward="false" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -1081,210 +1130,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blockmotion.uml">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>uk.ac.aber.dcs.blockmotion</OriginalElement>
-          <nodes>
-            <node x="221.0" y="297.0">uk.ac.aber.dcs.blockmotion.transformer.SlideRight</node>
-            <node x="467.0" y="297.0">uk.ac.aber.dcs.blockmotion.transformer.FlipVertical</node>
-            <node x="593.0" y="297.0">uk.ac.aber.dcs.blockmotion.transformer.FlipHorizontal</node>
-            <node x="717.6852487789988" y="0.0">uk.ac.aber.dcs.blockmotion.model.IFrame</node>
-            <node x="793.4563492063492" y="188.0">uk.ac.aber.dcs.blockmotion.model.IFootage</node>
-            <node x="455.65792887667885" y="79.0">uk.ac.aber.dcs.blockmotion.model.Frame</node>
-            <node x="108.0" y="297.0">uk.ac.aber.dcs.blockmotion.transformer.SlideLeft</node>
-            <node x="0.0" y="297.0">uk.ac.aber.dcs.blockmotion.transformer.SlideUp</node>
-            <node x="342.0" y="297.0">uk.ac.aber.dcs.blockmotion.transformer.SlideDown</node>
-            <node x="402.4771062271063" y="396.0">uk.ac.aber.dcs.blockmotion.gui.Animator</node>
-            <node x="737.8313492063492" y="297.0">uk.ac.aber.dcs.blockmotion.model.Footage</node>
-            <node x="385.26282051282055" y="188.0">uk.ac.aber.dcs.blockmotion.transformer.Transform</node>
-            <node x="296.16666666666663" y="79.0">uk.ac.aber.dcs.blockmotion.transformer.Transformer</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="uk.ac.aber.dcs.blockmotion.gui.Animator" target="uk.ac.aber.dcs.blockmotion.model.Footage">
-              <point x="32.666666666666686" y="-14.5" />
-              <point x="484.14377289377296" y="366.0" />
-              <point x="783.3313492063492" y="366.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="uk.ac.aber.dcs.blockmotion.transformer.SlideDown" target="uk.ac.aber.dcs.blockmotion.transformer.Transformer">
-              <point x="-26.0" y="-14.5" />
-              <point x="368.0" y="237.0" />
-              <point x="359.23313492063494" y="237.0" />
-              <point x="359.23313492063494" y="168.0" />
-              <point x="352.66666666666663" y="168.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="uk.ac.aber.dcs.blockmotion.transformer.SlideRight" target="uk.ac.aber.dcs.blockmotion.transformer.Transformer">
-              <point x="-25.25" y="-14.5" />
-              <point x="246.25" y="168.0" />
-              <point x="336.5238095238095" y="168.0" />
-              <point x="-16.142857142857167" y="14.5" />
-            </edge>
-            <edge source="uk.ac.aber.dcs.blockmotion.gui.Animator" target="uk.ac.aber.dcs.blockmotion.transformer.FlipHorizontal">
-              <point x="21.77777777777777" y="-14.5" />
-              <point x="473.25488400488405" y="356.0" />
-              <point x="654.0" y="356.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="uk.ac.aber.dcs.blockmotion.gui.Animator" target="uk.ac.aber.dcs.blockmotion.model.IFootage">
-              <point x="43.55555555555554" y="-14.5" />
-              <point x="495.0326617826618" y="376.0" />
-              <point x="863.9563492063492" y="376.0" />
-              <point x="23.5" y="14.5" />
-            </edge>
-            <edge source="uk.ac.aber.dcs.blockmotion.transformer.SlideLeft" target="uk.ac.aber.dcs.blockmotion.transformer.Transform">
-              <point x="23.25" y="-14.5" />
-              <point x="177.75" y="257.0" />
-              <point x="407.3342490842491" y="257.0" />
-              <point x="-29.428571428571445" y="14.5" />
-            </edge>
-            <edge source="uk.ac.aber.dcs.blockmotion.gui.Animator" target="uk.ac.aber.dcs.blockmotion.transformer.SlideLeft">
-              <point x="-32.666666666666686" y="-14.5" />
-              <point x="418.8104395604396" y="366.0" />
-              <point x="154.5" y="366.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="uk.ac.aber.dcs.blockmotion.model.Frame" target="uk.ac.aber.dcs.blockmotion.model.IFrame">
-              <point x="0.0" y="-14.5" />
-              <point x="496.15792887667885" y="54.0" />
-              <point x="731.6852487789988" y="54.0" />
-              <point x="-28.0" y="14.5" />
-            </edge>
-            <edge source="uk.ac.aber.dcs.blockmotion.model.Footage" target="uk.ac.aber.dcs.blockmotion.model.Frame">
-              <point x="-34.125" y="-14.5" />
-              <point x="749.2063492063492" y="277.0" />
-              <point x="750.6852487789988" y="277.0" />
-              <point x="750.6852487789988" y="128.0" />
-              <point x="523.1579288766789" y="128.0" />
-              <point x="27.0" y="14.5" />
-            </edge>
-            <edge source="uk.ac.aber.dcs.blockmotion.transformer.FlipVertical" target="uk.ac.aber.dcs.blockmotion.transformer.Transform">
-              <point x="-26.5" y="-14.5" />
-              <point x="493.5" y="277.0" />
-              <point x="466.191391941392" y="277.0" />
-              <point x="29.428571428571445" y="14.5" />
-            </edge>
-            <edge source="uk.ac.aber.dcs.blockmotion.transformer.FlipVertical" target="uk.ac.aber.dcs.blockmotion.transformer.Transformer">
-              <point x="26.5" y="-14.5" />
-              <point x="546.5" y="148.0" />
-              <point x="384.95238095238096" y="148.0" />
-              <point x="32.28571428571428" y="14.5" />
-            </edge>
-            <edge source="uk.ac.aber.dcs.blockmotion.gui.Animator" target="uk.ac.aber.dcs.blockmotion.transformer.SlideRight">
-              <point x="-21.77777777777777" y="-14.5" />
-              <point x="429.6993284493285" y="356.0" />
-              <point x="271.5" y="356.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="uk.ac.aber.dcs.blockmotion.gui.Animator" target="uk.ac.aber.dcs.blockmotion.transformer.SlideUp">
-              <point x="-43.55555555555554" y="-14.5" />
-              <point x="407.92155067155073" y="376.0" />
-              <point x="44.0" y="376.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="uk.ac.aber.dcs.blockmotion.gui.Animator" target="uk.ac.aber.dcs.blockmotion.transformer.Transform">
-              <point x="0.0" y="-14.5" />
-              <point x="451.4771062271063" y="376.0" />
-              <point x="456.5" y="376.0" />
-              <point x="456.5" y="277.0" />
-              <point x="451.4771062271063" y="277.0" />
-              <point x="14.714285714285722" y="14.5" />
-            </edge>
-            <edge source="uk.ac.aber.dcs.blockmotion.transformer.SlideRight" target="uk.ac.aber.dcs.blockmotion.transformer.Transform">
-              <point x="25.25" y="-14.5" />
-              <point x="296.75" y="267.0" />
-              <point x="422.04853479853483" y="267.0" />
-              <point x="-14.714285714285722" y="14.5" />
-            </edge>
-            <edge source="uk.ac.aber.dcs.blockmotion.transformer.Transform" target="uk.ac.aber.dcs.blockmotion.model.Frame">
-              <point x="34.333333333333314" y="-14.5" />
-              <point x="471.09615384615387" y="168.0" />
-              <point x="496.15792887667885" y="168.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="uk.ac.aber.dcs.blockmotion.transformer.SlideUp" target="uk.ac.aber.dcs.blockmotion.transformer.Transformer">
-              <point x="-22.0" y="-14.5" />
-              <point x="22.0" y="148.0" />
-              <point x="304.2380952380952" y="148.0" />
-              <point x="-48.428571428571445" y="14.5" />
-            </edge>
-            <edge source="uk.ac.aber.dcs.blockmotion.transformer.SlideDown" target="uk.ac.aber.dcs.blockmotion.transformer.Transform">
-              <point x="26.0" y="-14.5" />
-              <point x="420.0" y="277.0" />
-              <point x="436.76282051282055" y="277.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="uk.ac.aber.dcs.blockmotion.gui.Animator" target="uk.ac.aber.dcs.blockmotion.transformer.SlideDown">
-              <point x="-10.888888888888857" y="-14.5" />
-              <point x="440.5882173382174" y="346.0" />
-              <point x="394.0" y="346.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="uk.ac.aber.dcs.blockmotion.transformer.SlideLeft" target="uk.ac.aber.dcs.blockmotion.transformer.Transformer">
-              <point x="-23.25" y="-14.5" />
-              <point x="131.25" y="158.0" />
-              <point x="320.3809523809524" y="158.0" />
-              <point x="-32.28571428571428" y="14.5" />
-            </edge>
-            <edge source="uk.ac.aber.dcs.blockmotion.transformer.FlipHorizontal" target="uk.ac.aber.dcs.blockmotion.transformer.Transform">
-              <point x="-30.5" y="-14.5" />
-              <point x="623.5" y="267.0" />
-              <point x="480.90567765567766" y="267.0" />
-              <point x="44.14285714285711" y="14.5" />
-            </edge>
-            <edge source="uk.ac.aber.dcs.blockmotion.transformer.Transform" target="uk.ac.aber.dcs.blockmotion.transformer.Transformer">
-              <point x="-34.33333333333337" y="-14.5" />
-              <point x="402.4294871794872" y="168.0" />
-              <point x="368.80952380952374" y="168.0" />
-              <point x="16.14285714285711" y="14.5" />
-            </edge>
-            <edge source="uk.ac.aber.dcs.blockmotion.transformer.FlipHorizontal" target="uk.ac.aber.dcs.blockmotion.transformer.Transformer">
-              <point x="30.5" y="-14.5" />
-              <point x="684.5" y="138.0" />
-              <point x="401.0952380952381" y="138.0" />
-              <point x="48.428571428571445" y="14.5" />
-            </edge>
-            <edge source="uk.ac.aber.dcs.blockmotion.gui.Animator" target="uk.ac.aber.dcs.blockmotion.transformer.FlipVertical">
-              <point x="10.888888888888857" y="-14.5" />
-              <point x="462.36599511599513" y="346.0" />
-              <point x="520.0" y="346.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="uk.ac.aber.dcs.blockmotion.transformer.SlideUp" target="uk.ac.aber.dcs.blockmotion.transformer.Transform">
-              <point x="22.0" y="-14.5" />
-              <point x="66.0" y="247.0" />
-              <point x="392.61996336996344" y="247.0" />
-              <point x="-44.14285714285711" y="14.5" />
-            </edge>
-            <edge source="uk.ac.aber.dcs.blockmotion.model.Footage" target="uk.ac.aber.dcs.blockmotion.model.IFootage">
-              <point x="34.125" y="-14.5" />
-              <point x="-23.5" y="14.5" />
-            </edge>
-            <edge source="uk.ac.aber.dcs.blockmotion.model.Footage" target="uk.ac.aber.dcs.blockmotion.model.IFrame">
-              <point x="-11.375" y="-14.5" />
-              <point x="771.9563492063492" y="54.0" />
-              <point x="759.6852487789988" y="54.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="-208.0" y="-10.0" />
-          <SelectedNodes>
-            <node>uk.ac.aber.dcs.blockmotion.model.Frame</node>
-          </SelectedNodes>
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/javafx-src.zip!/javafx/event/Event.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
           <caret line="198" column="0" lean-forward="false" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1299,57 +1148,98 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="3" lean-forward="false" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/LoadWindow.java" />
+    <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/RunningStates.java" />
+    <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/model/Frame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding>
+            <element signature="method#Frame#0;class#Frame#0" expanded="false" />
+            <element signature="e#750#751#0" expanded="false" />
+            <element signature="e#785#786#0" expanded="false" />
+            <element signature="e#849#850#0" expanded="false" />
+            <element signature="e#882#883#0" expanded="false" />
+            <element signature="e#924#925#0" expanded="false" />
+            <element signature="e#951#952#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/SetFileName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="37" column="12" lean-forward="false" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/model/Frame.java">
+    <entry file="file://$PROJECT_DIR$/blockmotion.uml">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>uk.ac.aber.dcs.blockmotion</OriginalElement>
+          <nodes>
+            <node x="" y="">uk.ac.aber.dcs.blockmotion.transformer.SlideRight</node>
+            <node x="" y="">uk.ac.aber.dcs.blockmotion.transformer.FlipVertical</node>
+            <node x="" y="">uk.ac.aber.dcs.blockmotion.transformer.FlipHorizontal</node>
+            <node x="" y="">uk.ac.aber.dcs.blockmotion.model.IFrame</node>
+            <node x="" y="">uk.ac.aber.dcs.blockmotion.model.IFootage</node>
+            <node x="" y="">uk.ac.aber.dcs.blockmotion.model.Frame</node>
+            <node x="" y="">uk.ac.aber.dcs.blockmotion.transformer.SlideUp</node>
+            <node x="" y="">uk.ac.aber.dcs.blockmotion.transformer.SlideLeft</node>
+            <node x="" y="">uk.ac.aber.dcs.blockmotion.transformer.SlideDown</node>
+            <node x="" y="">uk.ac.aber.dcs.blockmotion.model.Footage</node>
+            <node x="" y="">uk.ac.aber.dcs.blockmotion.gui.Animator</node>
+            <node x="" y="">uk.ac.aber.dcs.blockmotion.transformer.Transform</node>
+            <node x="" y="">uk.ac.aber.dcs.blockmotion.transformer.Transformer</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="610.0" y="289.5" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/transformer/SlideLeft.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding>
-            <element signature="method#Frame#0;class#Frame#0" expanded="false" />
-            <element signature="e#849#850#0" expanded="true" />
-            <element signature="e#882#883#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-216">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/model/Footage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="44" column="27" lean-forward="false" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
+        <state relative-caret-position="770">
+          <caret line="123" column="1" lean-forward="false" selection-start-line="123" selection-start-column="1" selection-end-line="123" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/LoadWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="37" column="35" lean-forward="false" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#720#721#0" expanded="true" />
+            <element signature="e#758#759#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/Animator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="343" column="5" lean-forward="false" selection-start-line="343" selection-start-column="5" selection-end-line="343" selection-end-column="5" />
+        <state relative-caret-position="669">
+          <caret line="483" column="58" lean-forward="false" selection-start-line="483" selection-start-column="58" selection-end-line="483" selection-end-column="58" />
           <folding>
             <element signature="method#main#0;class#Animator#0" expanded="false" />
-            <element signature="e#1904#1977#0" expanded="false" />
-            <element signature="method#saveFootage#0;class#Animator#0" expanded="false" />
             <element signature="method#editMenu#0;class#Animator#0" expanded="false" />
-            <element signature="method#createGrid#0;class#Animator#0" expanded="false" />
-            <element signature="method#createGrid#1;class#Animator#0" expanded="false" />
+            <element signature="method#updateWindowTitle#0;class#Animator#0" expanded="false" />
+            <element signature="e#12424#12580#0" expanded="false" />
+            <element signature="e#12752#13443#0" expanded="false" />
+            <element signature="e#13614#14308#0" expanded="false" />
+            <element signature="e#14484#14598#0" expanded="false" />
             <element signature="method#runAnimation#0;class#Animator#0" expanded="false" />
-            <element signature="method#printEditMenu#0;class#Animator#0" expanded="false" />
-            <element signature="method#printMenu#0;class#Animator#0" expanded="false" />
-            <element signature="method#layoutTest#0;class#Animator#0" expanded="false" />
           </folding>
         </state>
       </provider>
