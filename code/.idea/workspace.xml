@@ -38,9 +38,27 @@
                 <file leaf-file-name="SetFileName.java" pinned="false" current-in-tab="false">
                   <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/SetFileName.java">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="918">
-                        <caret line="62" column="12" lean-forward="false" selection-start-line="62" selection-start-column="12" selection-end-line="65" selection-end-column="33" />
+                      <state relative-caret-position="696">
+                        <caret line="65" column="33" lean-forward="true" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
                         <folding />
+                      </state>
+                    </provider>
+                  </entry>
+                </file>
+                <file leaf-file-name="TransformMenu.java" pinned="false" current-in-tab="false">
+                  <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/TransformMenu.java">
+                    <provider selected="true" editor-type-id="text-editor">
+                      <state relative-caret-position="306">
+                        <caret line="30" column="16" lean-forward="false" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+                        <folding>
+                          <element signature="docComment;class#TransformMenu#0" expanded="false" />
+                          <element signature="e#1827#2296#0" expanded="false" />
+                          <element signature="e#2427#2900#0" expanded="false" />
+                          <element signature="e#3019#3483#0" expanded="false" />
+                          <element signature="e#3610#4079#0" expanded="false" />
+                          <element signature="e#4218#4522#0" expanded="false" />
+                          <element signature="e#4669#4975#0" expanded="false" />
+                        </folding>
                       </state>
                     </provider>
                   </entry>
@@ -48,13 +66,15 @@
                 <file leaf-file-name="Animator.java" pinned="false" current-in-tab="true">
                   <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/Animator.java">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="240">
-                        <caret line="504" column="0" lean-forward="true" selection-start-line="504" selection-start-column="0" selection-end-line="504" selection-end-column="0" />
+                      <state relative-caret-position="764">
+                        <caret line="789" column="84" lean-forward="false" selection-start-line="789" selection-start-column="84" selection-end-line="789" selection-end-column="84" />
                         <folding>
                           <element signature="method#main#0;class#Animator#0" expanded="false" />
                           <element signature="method#start#0;class#Animator#0" expanded="false" />
                           <element signature="method#saveFootage#0;class#Animator#0" expanded="false" />
+                          <element signature="method#editMenu#0;class#Animator#0" expanded="false" />
                           <element signature="method#updateWindowTitle#0;class#Animator#0" expanded="false" />
+                          <element signature="method#runGui#0;class#Animator#0" expanded="false" />
                           <element signature="method#createGrid#0;class#Animator#0" expanded="false" />
                           <element signature="method#createGrid#1;class#Animator#0" expanded="false" />
                           <element signature="method#runAnimation#0;class#Animator#0" expanded="false" />
@@ -66,28 +86,24 @@
                     </provider>
                   </entry>
                 </file>
-                <file leaf-file-name="TransformMenu.java" pinned="false" current-in-tab="false">
-                  <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/TransformMenu.java">
-                    <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="147">
-                        <caret line="30" column="16" lean-forward="false" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
-                        <folding>
-                          <element signature="imports" expanded="true" />
-                        </folding>
-                      </state>
-                    </provider>
-                  </entry>
-                </file>
               </leaf>
             </split-first>
             <split-second>
-              <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-                <file leaf-file-name="SetFileName.java" pinned="false" current-in-tab="true">
-                  <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/SetFileName.java">
+              <leaf>
+                <file leaf-file-name="TransformMenu.java" pinned="false" current-in-tab="true">
+                  <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/TransformMenu.java">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="529">
-                        <caret line="56" column="37" lean-forward="false" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
-                        <folding />
+                      <state relative-caret-position="255">
+                        <caret line="27" column="34" lean-forward="false" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+                        <folding>
+                          <element signature="docComment;class#TransformMenu#0" expanded="false" />
+                          <element signature="e#1827#2296#0" expanded="false" />
+                          <element signature="e#2427#2900#0" expanded="false" />
+                          <element signature="e#3019#3483#0" expanded="false" />
+                          <element signature="e#3610#4079#0" expanded="false" />
+                          <element signature="e#4218#4522#0" expanded="false" />
+                          <element signature="e#4669#4975#0" expanded="false" />
+                        </folding>
                       </state>
                     </provider>
                   </entry>
@@ -105,33 +121,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Footage.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Footage.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/model/Footage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1836">
-              <caret line="123" column="1" lean-forward="false" selection-start-line="123" selection-start-column="1" selection-end-line="123" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Animator.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/Animator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1904">
-              <caret line="170" column="30" lean-forward="true" selection-start-line="170" selection-start-column="30" selection-end-line="170" selection-end-column="30" />
+            <state relative-caret-position="510">
+              <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#main#0;class#Animator#0" expanded="false" />
-                <element signature="method#start#0;class#Animator#0" expanded="false" />
-                <element signature="method#saveFootage#0;class#Animator#0" expanded="false" />
-                <element signature="method#updateWindowTitle#0;class#Animator#0" expanded="false" />
-                <element signature="method#createGrid#0;class#Animator#0" expanded="false" />
-                <element signature="method#createGrid#1;class#Animator#0" expanded="false" />
-                <element signature="method#runAnimation#0;class#Animator#0" expanded="false" />
-                <element signature="method#printEditMenu#0;class#Animator#0" expanded="false" />
-                <element signature="method#printMenu#0;class#Animator#0" expanded="false" />
-                <element signature="method#layoutTest#0;class#Animator#0" expanded="false" />
+                <element signature="method#load#0;class#Footage#0" expanded="false" />
+                <element signature="method#save#0;class#Footage#0" expanded="false" />
+                <element signature="method#transform#0;class#Footage#0" expanded="false" />
+                <element signature="method#printChar#0;class#Footage#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -140,10 +139,16 @@
       <file leaf-file-name="TransformMenu.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/TransformMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="105" column="53" lean-forward="false" selection-start-line="105" selection-start-column="53" selection-end-line="105" selection-end-column="53" />
+            <state relative-caret-position="380">
+              <caret line="103" column="49" lean-forward="false" selection-start-line="103" selection-start-column="49" selection-end-line="103" selection-end-column="49" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="docComment;class#TransformMenu#0" expanded="false" />
+                <element signature="e#1827#2296#0" expanded="false" />
+                <element signature="e#2427#2900#0" expanded="false" />
+                <element signature="e#3019#3483#0" expanded="false" />
+                <element signature="e#3610#4079#0" expanded="false" />
+                <element signature="e#4218#4522#0" expanded="false" />
+                <element signature="e#4669#4975#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -155,6 +160,30 @@
             <state relative-caret-position="646">
               <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Animator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/Animator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="42" column="48" lean-forward="false" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="48" />
+              <folding>
+                <element signature="method#main#0;class#Animator#0" expanded="false" />
+                <element signature="method#start#0;class#Animator#0" expanded="false" />
+                <element signature="method#runMenu#0;class#Animator#0" expanded="false" />
+                <element signature="method#saveFootage#0;class#Animator#0" expanded="false" />
+                <element signature="method#editMenu#0;class#Animator#0" expanded="false" />
+                <element signature="method#updateWindowTitle#0;class#Animator#0" expanded="false" />
+                <element signature="method#runGui#0;class#Animator#0" expanded="false" />
+                <element signature="method#createGrid#0;class#Animator#0" expanded="false" />
+                <element signature="method#createGrid#1;class#Animator#0" expanded="false" />
+                <element signature="method#runAnimation#0;class#Animator#0" expanded="false" />
+                <element signature="method#printEditMenu#0;class#Animator#0" expanded="false" />
+                <element signature="method#printMenu#0;class#Animator#0" expanded="false" />
+                <element signature="method#layoutTest#0;class#Animator#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -217,6 +246,7 @@
         <option value="$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/RunningStates.java" />
         <option value="$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/model/Footage.java" />
         <option value="$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/SetFileName.java" />
+        <option value="$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/MainWindow.java" />
         <option value="$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/TransformMenu.java" />
         <option value="$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/Animator.java" />
       </list>
@@ -252,9 +282,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -309,6 +338,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -321,7 +351,7 @@
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../UML" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/blockmotion-template" />
     <property name="extract.method.default.visibility" value="private" />
   </component>
   <component name="RecentsManager">
@@ -855,12 +885,14 @@
       <workItem from="1492450820365" duration="8310000" />
       <workItem from="1492474285286" duration="8563000" />
       <workItem from="1492484981398" duration="1986000" />
-      <workItem from="1492486985894" duration="111000" />
+      <workItem from="1492486985894" duration="491000" />
+      <workItem from="1492515583029" duration="1648000" />
+      <workItem from="1492517248214" duration="7323000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179257000" />
+    <option name="totallyTimeSpent" value="188608000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -873,11 +905,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -889,24 +921,23 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14925373" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15245202" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Time Tracker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3943662" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Time Tracker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -937,8 +968,14 @@
           <properties />
           <option name="timeStamp" value="64" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/model/Footage.java</url>
+          <line>74</line>
+          <properties />
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="73" />
+      <option name="time" value="77" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -947,7 +984,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/styling.css" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home/javafx-src.zip!/javafx/beans/property/StringPropertyBase.java" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home/src.zip!/java/util/HashMap.java" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home/src.zip!/java/util/AbstractCollection.java" />
@@ -1168,14 +1204,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/model/Footage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1836">
-          <caret line="123" column="1" lean-forward="false" selection-start-line="123" selection-start-column="1" selection-end-line="123" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/model/Frame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="736">
@@ -1205,39 +1233,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/SetFileName.java">
+    <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="62" column="12" lean-forward="false" selection-start-line="62" selection-start-column="12" selection-end-line="65" selection-end-column="33" />
+        <state relative-caret-position="204">
+          <caret line="12" column="8" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/TransformMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="30" column="16" lean-forward="false" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+        <state relative-caret-position="380">
+          <caret line="103" column="49" lean-forward="false" selection-start-line="103" selection-start-column="49" selection-end-line="103" selection-end-column="49" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#TransformMenu#0" expanded="false" />
+            <element signature="e#1827#2296#0" expanded="false" />
+            <element signature="e#2427#2900#0" expanded="false" />
+            <element signature="e#3019#3483#0" expanded="false" />
+            <element signature="e#3610#4079#0" expanded="false" />
+            <element signature="e#4218#4522#0" expanded="false" />
+            <element signature="e#4669#4975#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/SetFileName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="65" column="33" lean-forward="true" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/gui/Animator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="504" column="0" lean-forward="true" selection-start-line="504" selection-start-column="0" selection-end-line="504" selection-end-column="0" />
+        <state relative-caret-position="294">
+          <caret line="42" column="48" lean-forward="false" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="48" />
           <folding>
             <element signature="method#main#0;class#Animator#0" expanded="false" />
             <element signature="method#start#0;class#Animator#0" expanded="false" />
+            <element signature="method#runMenu#0;class#Animator#0" expanded="false" />
             <element signature="method#saveFootage#0;class#Animator#0" expanded="false" />
+            <element signature="method#editMenu#0;class#Animator#0" expanded="false" />
             <element signature="method#updateWindowTitle#0;class#Animator#0" expanded="false" />
+            <element signature="method#runGui#0;class#Animator#0" expanded="false" />
             <element signature="method#createGrid#0;class#Animator#0" expanded="false" />
             <element signature="method#createGrid#1;class#Animator#0" expanded="false" />
             <element signature="method#runAnimation#0;class#Animator#0" expanded="false" />
             <element signature="method#printEditMenu#0;class#Animator#0" expanded="false" />
             <element signature="method#printMenu#0;class#Animator#0" expanded="false" />
             <element signature="method#layoutTest#0;class#Animator#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uk/ac/aber/dcs/blockmotion/model/Footage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding>
+            <element signature="method#load#0;class#Footage#0" expanded="false" />
+            <element signature="method#save#0;class#Footage#0" expanded="false" />
+            <element signature="method#transform#0;class#Footage#0" expanded="false" />
+            <element signature="method#printChar#0;class#Footage#0" expanded="false" />
           </folding>
         </state>
       </provider>

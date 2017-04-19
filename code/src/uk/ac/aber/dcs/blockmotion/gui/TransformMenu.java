@@ -57,8 +57,13 @@ public class TransformMenu {
                 transformer = new SlideLeft();
                 slideLeftNumber = Integer.parseInt(slideLeftText.getText());
 
-                for (int i = 0; i < slideLeftNumber; i++) {
-                    footage.transform(transformer);
+                if (footage == null) {
+
+                    AlertBox.display("Transform error", "You need to load the footage first");
+                } else {
+                    for (int i = 0; i < slideLeftNumber; i++) {
+                        footage.transform(transformer);
+                    }
                 }
             });
 
@@ -68,8 +73,13 @@ public class TransformMenu {
                 transformer = new SlideRight();
                 slideRightNumber = Integer.parseInt(slideRightText.getText());
 
-                for (int i = 0; i < slideRightNumber; i++) {
-                    footage.transform(transformer);
+                if (footage == null) {
+
+                    AlertBox.display("Transform error", "You need to load the footage first");
+                } else {
+                    for (int i = 0; i < slideRightNumber; i++) {
+                        footage.transform(transformer);
+                    }
                 }
             });
 
@@ -79,8 +89,13 @@ public class TransformMenu {
                 transformer = new SlideUp();
                 slideUpNumber = Integer.parseInt(slideRightText.getText());
 
-                for (int i = 0; i < slideUpNumber; i++) {
-                    footage.transform(transformer);
+                if (footage == null) {
+
+                    AlertBox.display("Transform error", "You need to load the footage first");
+                } else {
+                    for (int i = 0; i < slideUpNumber; i++) {
+                        footage.transform(transformer);
+                    }
                 }
             });
 
@@ -90,8 +105,13 @@ public class TransformMenu {
                 transformer = new SlideDown();
                 slideDownNumber = Integer.parseInt(slideDownText.getText());
 
-                for (int i = 0; i < slideDownNumber; i++) {
-                    footage.transform(transformer);
+                if (footage == null) {
+
+                    AlertBox.display("Transform error", "You need to load the footage first");
+                } else {
+                    for (int i = 0; i < slideDownNumber; i++) {
+                        footage.transform(transformer);
+                    }
                 }
             });
 
@@ -99,14 +119,24 @@ public class TransformMenu {
             flipVerticalButton.setText("Vertical Flip");
             flipVerticalButton.setOnAction(event -> {
                 transformer = new FlipVertical();
-                footage.transform(transformer);
+                if (footage == null) {
+
+                    AlertBox.display("Transform error", "You need to load the footage first");
+                } else {
+                    footage.transform(transformer);
+                }
             });
 
             //flip horizontal button
             flipHorizontalButton.setText("Horizontal Flip");
             flipHorizontalButton.setOnAction(event -> {
                 transformer = new FlipHorizontal();
-                footage.transform(transformer);
+                if (footage == null) {
+
+                    AlertBox.display("Transform error", "You need to load the footage first");
+                } else {
+                    footage.transform(transformer);
+                }
             });
 
             GridPane.setConstraints(slideLeftButton, 0, 0);

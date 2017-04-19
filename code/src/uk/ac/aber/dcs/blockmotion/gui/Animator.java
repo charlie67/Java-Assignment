@@ -40,6 +40,7 @@ public class Animator extends Application{
     private String fileName = "";
     private boolean transformationsDone = false;
     private Transform transformer;
+    private Scanner in = new Scanner(System.in);
 
     //for edit menu slide numbers
     private int slideRightNumber = 1;
@@ -49,10 +50,6 @@ public class Animator extends Application{
 
     //gui stuff
     private Stage window = new Stage();
-
-
-    private Scanner in = new Scanner(System.in);
-
 
     public static void main(String[] args) {
         // This is how a javafx class is run.
@@ -127,7 +124,7 @@ public class Animator extends Application{
                                 System.out.println("loaded footage for " + fileName);
 
                                 createGrid(footage.getNumRows());
-//                                updateWindowTitle();
+                                updateWindowTitle();
 
                             } catch (IOException e) {
                                 System.err.println("Could not open file: " + fileName +
@@ -169,6 +166,8 @@ public class Animator extends Application{
                         break;
 
                     case "ae":
+                        System.out.println("** Advanced Edit **");
+                        advancedEditMenu();
                         break;
 
                     case "q":
@@ -234,6 +233,7 @@ public class Animator extends Application{
     private void editMenu() {
         System.out.println("** edit menu **");
         String input;
+        String previousInput = "";
 
 
         do {
@@ -328,6 +328,95 @@ public class Animator extends Application{
                     break;
 
                 case "r":
+                    //need to do switch case on previousInput
+                    switch(previousInput){
+                        case "fh":
+                            System.out.println("Flipping horizontally");
+
+                            transformer = new FlipHorizontal();
+                            footage.transform(transformer);
+
+                            transformationsDone = true;
+                            break;
+
+                        case "fv":
+                            System.out.println("Flipping vertically");
+
+                            transformer = new FlipVertical();
+                            footage.transform(transformer);
+
+                            transformationsDone = true;
+                            break;
+
+                        case "sl":
+                            System.out.println("Sliding left");
+
+                            transformer = new SlideLeft();
+                            for (int i =0; i<slideLeftNumber; i++) {
+                                footage.transform(transformer);
+                            }
+
+                            transformationsDone = true;
+                            break;
+
+                        case "sr":
+                            System.out.println("Sliding right");
+
+                            transformer = new SlideRight();
+                            for (int i =0; i<slideRightNumber; i++) {
+                                footage.transform(transformer);
+                            }
+
+                            transformationsDone = true;
+                            break;
+
+                        case "su":
+                            System.out.println("Sliding up");
+
+                            transformer = new SlideUp();
+                            for (int i =0; i<slideUpNumber; i++) {
+                                footage.transform(transformer);
+                            }
+
+                            transformationsDone = true;
+                            break;
+
+                        case "sd":
+                            System.out.println("Sliding down");
+
+                            transformer = new SlideDown();
+                            for (int i =0; i<slideDownNumber; i++) {
+                                footage.transform(transformer);
+                            }
+
+                            transformationsDone = true;
+                            break;
+
+                        case "nr":
+                            System.out.println("Enter the new number:");
+                            slideRightNumber = in.nextInt();
+                            in.nextLine();
+                            break;
+
+                        case "nl":
+                            System.out.println("Enter the new number:");
+                            slideLeftNumber = in.nextInt();
+                            in.nextLine();
+                            break;
+
+                        case "nd":
+                            System.out.println("Enter the new number:");
+                            slideDownNumber = in.nextInt();
+                            in.nextLine();
+                            break;
+
+                        case "nu":
+                            System.out.println("Enter the new number:");
+                            slideUpNumber = in.nextInt();
+                            in.nextLine();
+                            break;
+                    }
+
                     break;
 
                 case "q":
@@ -336,6 +425,10 @@ public class Animator extends Application{
                 default:
                     System.out.println("Unknown command, please try again.");
                     break;
+            }
+
+            if (!input.equals("r")){
+                previousInput = input;
             }
 
         } while (!input.equals("q"));
@@ -457,6 +550,13 @@ public class Animator extends Application{
                 transformMenu.display(footage);
             });
 
+            //edit menu
+            editMenuButton = new Button();
+            editMenuButton.setText("Edit Menu");
+            editMenuButton.setOnAction(event -> {
+
+            });
+
             /*sets all the items on the grid
 
             The code to center the items came from
@@ -472,6 +572,7 @@ public class Animator extends Application{
             GridPane.setConstraints(currentFileNameLabel,2,0);
             GridPane.setHalignment(currentFileNameLabel, HPos.CENTER);
 
+
             GridPane.setConstraints(loadedLabel,2,1);
             GridPane.setHalignment(loadedLabel, HPos.CENTER);
 
@@ -480,6 +581,7 @@ public class Animator extends Application{
 
             GridPane.setConstraints(saveAnimationButton,1,1);
             GridPane.setHalignment(saveAnimationButton, HPos.CENTER);
+
 
             GridPane.setConstraints(stateLabel,2,2);
             GridPane.setHalignment(stateLabel, HPos.CENTER);
@@ -490,12 +592,17 @@ public class Animator extends Application{
             GridPane.setConstraints(stopAnimationButton, 1, 2);
             GridPane.setHalignment(stopAnimationButton, HPos.CENTER);
 
+
             GridPane.setConstraints(transformMenuButton, 0, 3);
             GridPane.setHalignment(transformMenuButton, HPos.CENTER);
 
+            GridPane.setConstraints(editMenuButton, 1, 3);
+            GridPane.setHalignment(editMenuButton, HPos.CENTER);
+
 
             grid.getChildren().addAll(fileNameButton, loadAnimationButton, currentFileNameLabel, saveAnimationButton,
-                    stateLabel, fileNameTextField, loadedLabel, runAnimationButton, stopAnimationButton, transformMenuButton);
+                    stateLabel, fileNameTextField, loadedLabel, runAnimationButton, stopAnimationButton, transformMenuButton,
+                    editMenuButton);
 
             Scene scene = new Scene(grid);
             window.setScene(scene);
@@ -516,8 +623,6 @@ public class Animator extends Application{
     // Here is another example. This one is useful because it creates
     // the GUI grid. You will need to call this from the menu, e.g. when starting
     // an animation.
-
-
     private void createGrid() {
         Platform.runLater(() -> {
 
@@ -670,9 +775,19 @@ public class Animator extends Application{
         System.out.println("Enter option:");
     }
 
+    private void advancedEditMenu(){
+        String input = "";
+
+        System.out.println("** Advanced Edit **");
+
+        do {
+            System.out.println("Enter the column ");
+        } while (!input.equals("q"));
+    }
+
 
     /**
-     * Used to print out the i's and j's are the correct way round
+     * Used to print out the i's and j's to make sure that they are stored correctly
      */
     private void layoutTest(){
         System.out.println("i = 0, j = 0");
