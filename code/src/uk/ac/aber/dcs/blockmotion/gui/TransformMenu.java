@@ -12,8 +12,8 @@ import uk.ac.aber.dcs.blockmotion.model.IFootage;
 import uk.ac.aber.dcs.blockmotion.transformer.*;
 
 /**
- * @author Charlie
- * @version 18.4.17
+ * @author Charlie Robinson
+ * @version 20.4.17
  */
 public class TransformMenu {
     private Transform transformer;
@@ -37,7 +37,7 @@ public class TransformMenu {
             grid.setVgap(8);
             grid.setHgap(10);
 
-            window.setTitle("Edit Menu");
+            window.setTitle("Transformation Menu");
 
             TextField slideLeftText = new TextField("1");
             TextField slideRightText = new TextField("1");
@@ -59,7 +59,7 @@ public class TransformMenu {
 
                 if (footage == null) {
 
-                    AlertBox.display("Transform error", "You need to load the footage first");
+                    AlertBox.display("Error", "You need to load the footage first");
                 } else {
                     for (int i = 0; i < slideLeftNumber; i++) {
                         footage.transform(transformer);
@@ -75,7 +75,7 @@ public class TransformMenu {
 
                 if (footage == null) {
 
-                    AlertBox.display("Transform error", "You need to load the footage first");
+                    AlertBox.display("Error", "You need to load the footage first");
                 } else {
                     for (int i = 0; i < slideRightNumber; i++) {
                         footage.transform(transformer);
@@ -91,7 +91,7 @@ public class TransformMenu {
 
                 if (footage == null) {
 
-                    AlertBox.display("Transform error", "You need to load the footage first");
+                    AlertBox.display("Error", "You need to load the footage first");
                 } else {
                     for (int i = 0; i < slideUpNumber; i++) {
                         footage.transform(transformer);
@@ -107,7 +107,7 @@ public class TransformMenu {
 
                 if (footage == null) {
 
-                    AlertBox.display("Transform error", "You need to load the footage first");
+                    AlertBox.display("Error", "You need to load the footage first");
                 } else {
                     for (int i = 0; i < slideDownNumber; i++) {
                         footage.transform(transformer);
@@ -121,7 +121,7 @@ public class TransformMenu {
                 transformer = new FlipVertical();
                 if (footage == null) {
 
-                    AlertBox.display("Transform error", "You need to load the footage first");
+                    AlertBox.display("Error", "You need to load the footage first");
                 } else {
                     footage.transform(transformer);
                 }
@@ -133,7 +133,7 @@ public class TransformMenu {
                 transformer = new FlipHorizontal();
                 if (footage == null) {
 
-                    AlertBox.display("Transform error", "You need to load the footage first");
+                    AlertBox.display("Error", "You need to load the footage first");
                 } else {
                     footage.transform(transformer);
                 }
