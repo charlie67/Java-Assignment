@@ -13,11 +13,16 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
- * @author Charlie
- * @version 17.4.17
+ * @author Charlie Robinson
+ * @version 20.4.17
  */
 public class AlertBox {
 
+    /**
+     * Creates an alert window that pops up to the user
+     * @param title The title of the window
+     * @param text The text to display in the window
+     */
     public static void display(String title, String text){
         Platform.runLater(() -> {
             Stage window = new Stage();
@@ -39,8 +44,14 @@ public class AlertBox {
             ok.setText("OK");
             ok.setOnAction(e -> window.close());
 
-
+            /*
+            Again the GridPane.setHalignment() code came from
+            https://stackoverflow.com/questions/35438104/javafx-alignment-of-label-in-gridpane
+            on the 18.4.17
+             */
             GridPane.setConstraints(message, 0,0);
+            GridPane.setHalignment(message, HPos.CENTER);
+
 
             GridPane.setConstraints(ok,0,1);
             GridPane.setHalignment(ok, HPos.CENTER);
