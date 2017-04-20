@@ -1,10 +1,13 @@
 package uk.ac.aber.dcs.blockmotion.gui;
 
 import javafx.application.Platform;
+import javafx.geometry.HPos;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -21,6 +24,11 @@ public class AlertBox {
 
             window.setTitle(title);
 
+            GridPane grid = new GridPane();
+            grid.setPadding(new Insets(10));
+            grid.setVgap(8);
+            grid.setHgap(10);
+
             //make the load window the only window that can be clicked on
             window.initModality(Modality.APPLICATION_MODAL);
 
@@ -31,11 +39,16 @@ public class AlertBox {
             ok.setText("OK");
             ok.setOnAction(e -> window.close());
 
-            HBox layout = new HBox(10);
 
-            layout.getChildren().addAll(message, ok);
+            GridPane.setConstraints(message, 0,0);
 
-            Scene scene = new Scene(layout);
+            GridPane.setConstraints(ok,0,1);
+            GridPane.setHalignment(ok, HPos.CENTER);
+
+
+            grid.getChildren().addAll(message, ok);
+
+            Scene scene = new Scene(grid);
 
             window.setScene(scene);
             window.showAndWait();
