@@ -5,7 +5,7 @@ package uk.ac.aber.dcs.blockmotion.gui;
  * need to update this file
  *
  * @author Chris Loftus  Charlie Robinson
- * @version 18th April 2017
+ * @version 20th April 2017
  */
 
 import javafx.application.Application;
@@ -530,8 +530,12 @@ public class Animator extends Application{
             runAnimationButton = new Button();
             runAnimationButton.setText("Run Animation");
             runAnimationButton.setOnAction(e -> {
-                runAnimation();
-                stateLabel.setText("Current state: Running");
+                if (footage == null) {
+                    AlertBox.display("Run Error", "You need to load the footage first");
+                } else {
+                    runAnimation();
+                    stateLabel.setText("Current state: Running");
+                }
             });
 
             //stop running button
@@ -546,22 +550,31 @@ public class Animator extends Application{
             transformMenuButton = new Button();
             transformMenuButton.setText("Transform Menu");
             transformMenuButton.setOnAction(event -> {
-                TransformMenu transformMenu = new TransformMenu();
-                transformMenu.display(footage);
+                if (footage == null) {
+                    AlertBox.display("Menu Error", "You need to load the footage first");
+                } else {
+                    TransformMenu transformMenu = new TransformMenu();
+                    transformMenu.display(footage);
+                }
             });
 
             //edit menu
             editMenuButton = new Button();
             editMenuButton.setText("Edit Menu");
             editMenuButton.setOnAction(event -> {
-
+                if (footage == null) {
+                    AlertBox.display("Menu Error", "You need to load the footage first");
+                } else {
+                    EditMenu editMenu = new EditMenu();
+                    editMenu.display(footage);
+                }
             });
 
             /*sets all the items on the grid
 
             The code to center the items came from
             https://stackoverflow.com/questions/35438104/javafx-alignment-of-label-in-gridpane
-            18.4.17
+            on the 18.4.17
              */
             GridPane.setConstraints(fileNameButton,0,0);
             GridPane.setHalignment(fileNameButton, HPos.CENTER);
