@@ -166,7 +166,6 @@ public class Animator extends Application{
                         break;
 
                     case "ae":
-                        System.out.println("** Advanced Edit **");
                         advancedEditMenu();
                         break;
 
@@ -205,6 +204,9 @@ public class Animator extends Application{
         // Platform.exit();
     }
 
+    /*
+    saves the the filename specified in fn
+     */
     private void saveFootage(String fn) {
         boolean go;
         System.out.println("Saving as " + fn);
@@ -441,6 +443,9 @@ public class Animator extends Application{
         });
     }
 
+    /*
+    creates and starts the GUI
+     */
     private void runGui(){
         Platform.runLater(() -> {
             Button fileNameButton;
@@ -784,18 +789,52 @@ public class Animator extends Application{
         System.out.println("a - run footage aimation");
         System.out.println("t - stop footage animation");
         System.out.println("e - edit current footage");
+        System.out.println("ae - advanced edit menu");
         System.out.println("q - Quit");
         System.out.println("Enter option:");
     }
 
     private void advancedEditMenu(){
-        String input = "";
+        String input;
 
         System.out.println("** Advanced Edit **");
 
         do {
-            System.out.println("Enter the column ");
+
+            advancedEditMenuPrint();
+            input = in.nextLine();
+
+            switch(input){
+                case("e"):
+                    System.out.println("What frame do you want to edit");
+                    int frame = in.nextInt()-1;
+
+                    System.out.println("Enter the column number");
+                    int column = in.nextInt()-1;
+
+                    System.out.println("Enter the row number");
+                    int row = in.nextInt()-1;//-1 because all of these are 0 based
+                    in.nextLine();
+
+                    System.out.println("Enter the char to replace");
+                    System.out.println("b - black");
+                    System.out.println("l - yellow");
+                    System.out.println("r - black");
+                    char charToReplace = in.nextLine().charAt(0);
+
+                    if(validateData(frame, column, row, charToReplace)){
+                        footage.getFrame(frame).setChar(row, column, charToReplace);
+                    } else {
+                        System.out.println("You entered incorrect data");
+                    }
+            }
+
         } while (!input.equals("q"));
+    }
+
+    private void advancedEditMenuPrint(){
+        System.out.println("e - edit a frame");
+        System.out.println("q - quit this menu");
     }
 
 
@@ -811,5 +850,19 @@ public class Animator extends Application{
 
         System.out.println("i = 0, j = 2");
         System.out.println(footage.getFrame(0).getChar(0,2));
+    }
+
+    private boolean validateData(int frame, int column, int row, char replace){
+        if (column>=footage.getNumRows()){
+            return false;
+        } else if(row>=footage.getNumRows()){
+            return false;
+        } else if (frame>=footage.getNumFrames()){
+            return false;
+        } else if(replace == 'b' || replace == 'r' || replace == 'l'){
+            return true;
+        } else {
+            return false;
+        }
     }
 }
