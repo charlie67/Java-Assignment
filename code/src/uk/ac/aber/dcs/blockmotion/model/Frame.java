@@ -52,6 +52,7 @@ public class Frame implements IFrame {
 
     @Override
     public void replace(IFrame f) {
+
     }
 
     /**
