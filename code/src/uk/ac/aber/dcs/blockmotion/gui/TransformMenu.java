@@ -5,6 +5,7 @@ import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -39,10 +40,7 @@ public class TransformMenu {
 
             window.setTitle("Transformation Menu");
 
-            TextField slideLeftText = new TextField("1");
-            TextField slideRightText = new TextField("1");
-            TextField slideUpText = new TextField("1");
-            TextField slideDownText = new TextField("1");
+            TextField slideNumber = new TextField("1");
 
             Button slideLeftButton = new Button();
             Button slideRightButton = new Button();
@@ -51,11 +49,13 @@ public class TransformMenu {
             Button flipVerticalButton = new Button();
             Button flipHorizontalButton = new Button();
 
+            Label slideDescription = new Label("Slide amount");
+
             //slide left button
             slideLeftButton.setText("Slide Left");
             slideLeftButton.setOnAction(event -> {
                 transformer = new SlideLeft();
-                slideLeftNumber = Integer.parseInt(slideLeftText.getText());
+                slideLeftNumber = Integer.parseInt(slideNumber.getText());
 
                 if (footage == null) {
 
@@ -71,7 +71,7 @@ public class TransformMenu {
             slideRightButton.setText("Slide Right");
             slideRightButton.setOnAction(event -> {
                 transformer = new SlideRight();
-                slideRightNumber = Integer.parseInt(slideRightText.getText());
+                slideRightNumber = Integer.parseInt(slideNumber.getText());
 
                 if (footage == null) {
 
@@ -87,7 +87,7 @@ public class TransformMenu {
             slideUpButton.setText("Slide Up");
             slideUpButton.setOnAction(event -> {
                 transformer = new SlideUp();
-                slideUpNumber = Integer.parseInt(slideRightText.getText());
+                slideUpNumber = Integer.parseInt(slideNumber.getText());
 
                 if (footage == null) {
 
@@ -103,7 +103,7 @@ public class TransformMenu {
             slideDownButton.setText("Slide Down");
             slideDownButton.setOnAction(event -> {
                 transformer = new SlideDown();
-                slideDownNumber = Integer.parseInt(slideDownText.getText());
+                slideDownNumber = Integer.parseInt(slideNumber.getText());
 
                 if (footage == null) {
 
@@ -147,40 +147,30 @@ public class TransformMenu {
             GridPane.setConstraints(slideLeftButton, 0, 0);
             GridPane.setHalignment(slideLeftButton, HPos.CENTER);
 
-            GridPane.setConstraints(slideLeftText, 1, 0);
-            GridPane.setHalignment(slideLeftText, HPos.CENTER);
-
-
-            GridPane.setConstraints(slideRightButton, 0, 1);
+            GridPane.setConstraints(slideRightButton, 1, 0);
             GridPane.setHalignment(slideRightButton, HPos.CENTER);
 
-            GridPane.setConstraints(slideRightText, 1, 1);
-            GridPane.setHalignment(slideRightText, HPos.CENTER);
-
-
-            GridPane.setConstraints(slideUpButton, 0, 2);
+            GridPane.setConstraints(slideUpButton, 2, 0);
             GridPane.setHalignment(slideUpButton, HPos.CENTER);
 
-            GridPane.setConstraints(slideUpText, 1, 2);
-            GridPane.setHalignment(slideUpText, HPos.CENTER);
-
-
-            GridPane.setConstraints(slideDownButton, 0, 3);
+            GridPane.setConstraints(slideDownButton, 3, 0);
             GridPane.setHalignment(slideDownButton, HPos.CENTER);
 
-            GridPane.setConstraints(slideDownText, 1, 3);
-            GridPane.setHalignment(slideDownText, HPos.CENTER);
 
-
-            GridPane.setConstraints(flipVerticalButton, 0, 4);
+            GridPane.setConstraints(flipVerticalButton, 4, 0);
             GridPane.setHalignment(flipVerticalButton, HPos.CENTER);
 
-            GridPane.setConstraints(flipHorizontalButton, 0, 5);
+            GridPane.setConstraints(flipHorizontalButton, 5, 0);
             GridPane.setHalignment(flipHorizontalButton, HPos.CENTER);
 
-            grid.getChildren().addAll(slideLeftButton, slideRightButton, slideUpButton, slideDownButton,
-                    slideLeftText, slideRightText, slideDownText, slideUpText, flipVerticalButton, flipHorizontalButton);
 
+            grid.add(slideDescription, 1,1,2,1);
+
+            grid.add(slideNumber, 3,1,2,1);
+
+            grid.getChildren().addAll(slideLeftButton, slideRightButton, slideUpButton, slideDownButton,
+                    flipVerticalButton, flipHorizontalButton);
+            //
 
             Scene scene = new Scene(grid);
 
