@@ -52,10 +52,6 @@ public class Frame implements IFrame {
 
     @Override
     public void replace(IFrame f) {
-        //cast f to a Frame and then
-        //this = f
-        //???
-        //TODO frame.replace() method
     }
 
     /**
