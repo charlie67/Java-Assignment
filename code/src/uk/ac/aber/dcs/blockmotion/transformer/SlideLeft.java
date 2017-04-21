@@ -16,9 +16,6 @@ public class SlideLeft extends Transform implements Transformer {
         super.initialize(frame.getNumRows(), frame);
 
         /*
-
-
-
         for(int i=0; i<super.numRows;i++){
             for(int j=0; j<super.numRows;j++){
                 super.tempFrame.setChar(i,j,frame.getChar(i,j));
