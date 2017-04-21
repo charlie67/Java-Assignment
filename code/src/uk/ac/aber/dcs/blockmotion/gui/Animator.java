@@ -91,6 +91,12 @@ public class Animator extends Application{
 
             System.out.println("Please quit the application via the menu");
         });
+
+        window.setOnCloseRequest(event -> {
+            AlertBox.display("FIX THIS", "Right now close from the cli");
+
+            event.consume();
+        });
     }
 
     private void runMenu() {
@@ -460,7 +466,7 @@ public class Animator extends Application{
             Button transformMenuButton;
             Button editMenuButton;
 
-            TextField fileNameTextField = new TextField();
+            TextField fileNameTextField = new TextField("fileName.txt");
 
             String unloaded = "No footage loaded";
 
@@ -579,6 +585,9 @@ public class Animator extends Application{
                 }
             });
 
+            //help button
+            Button help = new Button("❓");
+
             /*sets all the items on the grid
 
             The code to center the items came from
@@ -621,10 +630,14 @@ public class Animator extends Application{
             GridPane.setConstraints(editMenuButton, 1, 3);
             GridPane.setHalignment(editMenuButton, HPos.CENTER);
 
+            GridPane.setConstraints(help,2,3);
+            GridPane.setHalignment(help, HPos.RIGHT);
+
 
             grid.getChildren().addAll(fileNameButton, loadAnimationButton, currentFileNameLabel, saveAnimationButton,
                     stateLabel, fileNameTextField, loadedLabel, runAnimationButton, stopAnimationButton, transformMenuButton,
-                    editMenuButton);
+                    editMenuButton, help);
+
 
             Scene scene = new Scene(grid);
             window.setScene(scene);
