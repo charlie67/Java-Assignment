@@ -417,6 +417,10 @@ public class Animator extends Application{
                             slideUpNumber = in.nextInt();
                             in.nextLine();
                             break;
+
+                        default:
+                            System.out.println("Unknown command, please try again.");
+                            break;
                     }
 
                     break;
