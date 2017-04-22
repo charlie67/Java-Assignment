@@ -19,6 +19,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import uk.ac.aber.dcs.blockmotion.model.Footage;
 import uk.ac.aber.dcs.blockmotion.model.IFootage;
 import uk.ac.aber.dcs.blockmotion.model.IFrame;
@@ -92,11 +93,33 @@ public class Animator extends Application{
             System.out.println("Please quit the application via the menu");
         });
 
-        window.setOnCloseRequest(event -> {
-            AlertBox.display("FIX THIS", "Right now close from the cli");
+        //**GUI**
+        Stage confirmSaveWindow = new Stage();
+        ConfirmSave confirmSave = new ConfirmSave();
 
-            event.consume();
+        Platform.runLater(() -> {
+            //window is the GUI main window that contains everything
+            //confirmSaveWindow is the window that comes up when the user quits the program
+            // but the file has been edited
+
+            window.setOnCloseRequest(event -> {
+                if (transformationsDone){
+
+                    confirmSave.display(fileName, footage, confirmSaveWindow);
+                } else {
+                    Platform.exit();
+                }
+                event.consume();
+            });
+
+            confirmSaveWindow.setOnCloseRequest(event -> {
+
+                if (confirmSave.isClose()){
+                    Platform.exit();
+                }
+            });
         });
+
     }
 
     private void runMenu() {
@@ -493,6 +516,7 @@ public class Animator extends Application{
             //set file name button
             fileNameButton = new Button();
             fileNameButton.setText("Set File Name");
+            updateWindowTitle();
 
             fileNameButton.setOnAction(e -> {
                 fileName = fileNameTextField.getText();
@@ -570,6 +594,9 @@ public class Animator extends Application{
                 } else {
                     TransformMenu transformMenu = new TransformMenu();
                     transformMenu.display(footage);
+                    //This is a bug but I couldn't get a GUI window to properly return data
+                    //TODO fix transformationsDone for GUI transforms
+                    transformationsDone = true;
                 }
             });
 
@@ -582,6 +609,9 @@ public class Animator extends Application{
                 } else {
                     EditMenu editMenu = new EditMenu();
                     editMenu.display(footage);
+                    //Again, this is a bug but I couldn't get a GUI window to properly return data
+                    //TODO fix transformationsDone for GUI edits
+                    transformationsDone = true;
                 }
             });
 
