@@ -44,11 +44,7 @@ public class AlertBox {
             ok.setText("OK");
             ok.setOnAction(e -> window.close());
 
-            /*
-            Again the GridPane.setHalignment() code came from
-            https://stackoverflow.com/questions/35438104/javafx-alignment-of-label-in-gridpane
-            on the 18.4.17
-             */
+           //sets the items on the grid
             GridPane.setConstraints(message, 0,0);
             GridPane.setHalignment(message, HPos.CENTER);
 

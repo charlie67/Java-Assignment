@@ -618,12 +618,7 @@ public class Animator extends Application{
             //help button
             Button help = new Button("❓");
 
-            /*sets all the items on the grid
-
-            The code to center the items came from
-            https://stackoverflow.com/questions/35438104/javafx-alignment-of-label-in-gridpane
-            on the 18.4.17
-             */
+            //sets all the items on the grid
             GridPane.setConstraints(fileNameButton,0,0);
             GridPane.setHalignment(fileNameButton, HPos.CENTER);
 

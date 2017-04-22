@@ -56,7 +56,6 @@ public class EditMenu {
                 row = Integer.parseInt(rowNumber.getText())-1;
                 column = Integer.parseInt(columnNumber.getText())-1;
                 toReplace = charReplace.getValue().charAt(0);
-//                toReplace;
                 //all of these are 0 based so need to take away 1
 
                 if (validateData(column, row, frameNum, columnNumber, rowNumber, frameNumber)) {
@@ -70,11 +69,7 @@ public class EditMenu {
             cancel.setText("Cancel");
             cancel.setOnAction(event -> window.close());
 
-            /*
-            Again the GridPane.setHalignment() code came from
-            https://stackoverflow.com/questions/35438104/javafx-alignment-of-label-in-gridpane
-            on the 18.4.17
-             */
+
             GridPane.setConstraints(frameNumber, 0, 0);
 
             GridPane.setConstraints(columnNumber,0,1);

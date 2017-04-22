@@ -139,11 +139,7 @@ public class TransformMenu {
                 }
             });
 
-            /*
-            Again the GridPane.setHalignment() code came from
-            https://stackoverflow.com/questions/35438104/javafx-alignment-of-label-in-gridpane
-            on the 18.4.17
-             */
+
             GridPane.setConstraints(slideLeftButton, 0, 0);
             GridPane.setHalignment(slideLeftButton, HPos.CENTER);
 

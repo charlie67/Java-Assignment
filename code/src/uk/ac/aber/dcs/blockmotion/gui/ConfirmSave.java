@@ -60,8 +60,8 @@ public class ConfirmSave {
                         )
                 );
                 //this is needed because Stage.setOnCloseRequest is only called when an external close request is called
-                //this is when the exit button is pressed the window.fireEvent simulates an external close request so that
-                //the .setOnCloseRequest in Animator.java work
+                //this is when the exit button is pressed. However, this simulates an external close request so that
+                //the .setOnCloseRequest in the Animator class work
                 //the above code came from https://stackoverflow.com/questions/29710492/how-can-i-fire-internal-close-request
                 //on 22.4.17
             });
@@ -69,6 +69,7 @@ public class ConfirmSave {
             //don't save
             no.setOnAction(event -> {
                 close = true;
+
                 window.fireEvent(
                         new WindowEvent(
                                 window,
