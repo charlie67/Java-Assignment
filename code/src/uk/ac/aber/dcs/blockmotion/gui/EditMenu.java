@@ -23,6 +23,8 @@ public class EditMenu {
     private int maxRow;//the highest number of rows and columns there are
     private char toReplace;
 
+    private boolean transformationsDone = false;
+
     public void display(IFootage footage){
         Platform.runLater(() -> {
             maxFrameNum = footage.getNumFrames();
@@ -108,5 +110,13 @@ public class EditMenu {
         } else {
             return true;
         }
+    }
+
+    public boolean isTransformationsDone() {
+        return transformationsDone;
+    }
+
+    public void setTransformationsDone(boolean transformationsDone) {
+        this.transformationsDone = transformationsDone;
     }
 }

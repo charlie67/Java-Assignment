@@ -51,6 +51,8 @@ public class Animator extends Application{
 
     //gui stuff
     private Stage window = new Stage();
+    TransformMenu transformMenu = new TransformMenu();
+    EditMenu editMenu = new EditMenu();
 
     public static void main(String[] args) {
         // This is how a javafx class is run.
@@ -103,7 +105,7 @@ public class Animator extends Application{
             // but the file has been edited
 
             window.setOnCloseRequest(event -> {
-                if (transformationsDone){
+                if (editMenu.isTransformationsDone() || transformMenu.isTransformationsDone() || transformationsDone){
 
                     confirmSave.display(fileName, footage, confirmSaveWindow);
                 } else {
@@ -247,6 +249,7 @@ public class Animator extends Application{
                 footage.save(fn);
                 go = false;
                 System.out.println("Saved footage for " + fn);
+                updateTransformDone();
 
             } catch (IOException e) {
                 System.err.println("Could not open file: " + fn +
@@ -551,18 +554,7 @@ public class Animator extends Application{
             saveAnimationButton.setText("Save");
             saveAnimationButton.setOnAction(e -> {
                 fileName = fileNameTextField.getText();
-                try {
-                    if ( !( fileName.equals("") || fileName.equals(null) ) ){
-                        footage.save(fileName);
-                        AlertBox.display("Saved", "Saved to " + fileName);
-                        //dont want to save if the fileName is blank or unset
-                    } else {
-                        AlertBox.display("Save Error", "Set the file name first");
-                    }
-
-                } catch (IOException eGuiSave){
-                    AlertBox.display("Save Error", fileName + " not found, please enter a new name and try again");
-                }
+                saveFootage(fileName);
             });
 
             //run button
@@ -592,11 +584,7 @@ public class Animator extends Application{
                 if (footage == null) {
                     AlertBox.display("Menu Error", "You need to load the footage first");
                 } else {
-                    TransformMenu transformMenu = new TransformMenu();
                     transformMenu.display(footage);
-                    //This is a bug but I couldn't get a GUI window to properly return data
-                    //TODO fix transformationsDone for GUI transforms
-                    transformationsDone = true;
                 }
             });
 
@@ -607,11 +595,7 @@ public class Animator extends Application{
                 if (footage == null) {
                     AlertBox.display("Menu Error", "You need to load the footage first");
                 } else {
-                    EditMenu editMenu = new EditMenu();
                     editMenu.display(footage);
-                    //Again, this is a bug but I couldn't get a GUI window to properly return data
-                    //TODO fix transformationsDone for GUI edits
-                    transformationsDone = true;
                 }
             });
 
@@ -668,6 +652,12 @@ public class Animator extends Application{
             window.setScene(scene);
             window.show();
         });
+    }
+
+    private void updateTransformDone() {
+        editMenu.setTransformationsDone(false);
+        transformMenu.setTransformationsDone(false);
+        this.transformationsDone = false;
     }
 
     // An example method that you might like to call from your

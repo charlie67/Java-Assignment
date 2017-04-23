@@ -62,7 +62,7 @@ public class TransformMenu {
                 transformer = new SlideLeft();
                 slideLeftNumber = Integer.parseInt(slideNumber.getText());
                 transformationsDone = true;
-                
+
                 footage.transform(transformer);
 
             });
@@ -154,5 +154,13 @@ public class TransformMenu {
             window.setScene(scene);
             window.showAndWait();
         });
+    }
+
+    public boolean isTransformationsDone() {
+        return transformationsDone;
+    }
+
+    public void setTransformationsDone(boolean transformationsDone) {
+        this.transformationsDone = transformationsDone;
     }
 }
