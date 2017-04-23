@@ -5,7 +5,7 @@ package uk.ac.aber.dcs.blockmotion.gui;
  * need to update this file
  *
  * @author Chris Loftus  Charlie Robinson
- * @version 20th April 2017
+ * @version 23rd April 2017
  */
 
 import javafx.application.Application;
@@ -51,8 +51,8 @@ public class Animator extends Application{
 
     //gui stuff
     private Stage window = new Stage();
-    TransformMenu transformMenu = new TransformMenu();
-    EditMenu editMenu = new EditMenu();
+    private TransformMenu transformMenu = new TransformMenu();
+    private EditMenu editMenu = new EditMenu();
 
     public static void main(String[] args) {
         // This is how a javafx class is run.

@@ -15,20 +15,19 @@ import uk.ac.aber.dcs.blockmotion.transformer.*;
 
 /**
  * @author Charlie Robinson
- * @version 20.4.17
+ * @version 23.4.17
  */
 public class TransformMenu {
     private Transform transformer;
     private boolean transformationsDone = false;
+    private TextField frameNumber = new TextField("1");
+    private CheckBox frameCheckBox = new CheckBox("All Frames");
 
     /* these are here because otherwise I was getting
      Variable used in lambda expression should be final or effectively final
      in the lambda for button.setOnAction()
      */
-    private int slideLeftNumber = 1;
-    private int slideRightNumber = 1;
-    private int slideUpNumber = 1;
-    private int slideDownNumber = 1;
+    private int slideNumberInt = 1;
 
 
     public void display(IFootage footage) {
@@ -43,9 +42,11 @@ public class TransformMenu {
             window.setTitle("Transformation Menu");
 
             TextField slideNumber = new TextField("1");
-            TextField frameNumber = new TextField("1");
+            slideNumber.setPrefColumnCount(1);
 
-            CheckBox checkBox = new CheckBox("All Frames");
+            frameNumber.setPrefColumnCount(1);
+
+            frameCheckBox.fire();
 
             Button slideLeftButton = new Button();
             Button slideRightButton = new Button();
@@ -54,16 +55,17 @@ public class TransformMenu {
             Button flipVerticalButton = new Button();
             Button flipHorizontalButton = new Button();
 
-            Label slideDescription = new Label("Slide amount");
+            Label slideDescription = new Label("Slide Amount");
+            Label frameDescription = new Label("Frame Number");
 
             //slide left button
             slideLeftButton.setText("Slide Left");
             slideLeftButton.setOnAction(event -> {
                 transformer = new SlideLeft();
-                slideLeftNumber = Integer.parseInt(slideNumber.getText());
+                setSlideNumberIntInternal(slideNumber);
                 transformationsDone = true;
 
-                footage.transform(transformer);
+                doTransform(transformer, footage);
 
             });
 
@@ -71,10 +73,10 @@ public class TransformMenu {
             slideRightButton.setText("Slide Right");
             slideRightButton.setOnAction(event -> {
                 transformer = new SlideRight();
-                slideRightNumber = Integer.parseInt(slideNumber.getText());
+                setSlideNumberIntInternal(slideNumber);
                 transformationsDone = true;
 
-                footage.transform(transformer);
+                doTransform(transformer, footage);
 
             });
 
@@ -82,10 +84,10 @@ public class TransformMenu {
             slideUpButton.setText("Slide Up");
             slideUpButton.setOnAction(event -> {
                 transformer = new SlideUp();
-                slideUpNumber = Integer.parseInt(slideNumber.getText());
+                setSlideNumberIntInternal(slideNumber);
                 transformationsDone = true;
 
-                footage.transform(transformer);
+                doTransform(transformer, footage);
 
             });
 
@@ -93,10 +95,10 @@ public class TransformMenu {
             slideDownButton.setText("Slide Down");
             slideDownButton.setOnAction(event -> {
                 transformer = new SlideDown();
-                slideDownNumber = Integer.parseInt(slideNumber.getText());
+                setSlideNumberIntInternal(slideNumber);
                 transformationsDone = true;
 
-                footage.transform(transformer);
+                doTransform(transformer, footage);
 
             });
 
@@ -106,7 +108,7 @@ public class TransformMenu {
                 transformer = new FlipVertical();
                 transformationsDone = true;
 
-                footage.transform(transformer);
+                doTransform(transformer, footage);
 
             });
 
@@ -116,7 +118,7 @@ public class TransformMenu {
                 transformer = new FlipHorizontal();
                 transformationsDone = true;
 
-                footage.transform(transformer);
+                doTransform(transformer, footage);
 
             });
 
@@ -141,9 +143,12 @@ public class TransformMenu {
             GridPane.setHalignment(flipHorizontalButton, HPos.CENTER);
 
 
-            grid.add(slideDescription, 1,1,2,1);
+            grid.add(slideDescription, 0,1);
+            grid.add(slideNumber, 1,1);
 
-            grid.add(slideNumber, 3,1,2,1);
+            grid.add(frameDescription, 3,1);
+            grid.add(frameNumber, 4,1);
+            grid.add(frameCheckBox, 5,1);
 
             grid.getChildren().addAll(slideLeftButton, slideRightButton, slideUpButton, slideDownButton,
                     flipVerticalButton, flipHorizontalButton);
@@ -156,11 +161,43 @@ public class TransformMenu {
         });
     }
 
+    private void setSlideNumberIntInternal(TextField slideNumber) {
+        try {
+            slideNumberInt = Integer.parseInt(slideNumber.getText());
+        } catch(NumberFormatException e){
+            AlertBox.display("Error", "Number not entered into slide number box");
+        }
+    }
+
     public boolean isTransformationsDone() {
         return transformationsDone;
     }
 
     public void setTransformationsDone(boolean transformationsDone) {
         this.transformationsDone = transformationsDone;
+    }
+
+    private void doTransform(Transformer transformer, IFootage footage){
+        if (frameCheckBox.isSelected()) {
+            footage.transform(transformer);
+        } else {
+            footage.transform(transformer, getFrameNumber(footage));
+        }
+
+    }
+
+    private int getFrameNumber(IFootage footage){
+        try {
+            int toReturn = Math.abs(Integer.parseInt(frameNumber.getText()));
+            if (toReturn>footage.getNumFrames()){
+                AlertBox.display("Error", "Frame number entered was too high, the max number is " + footage.getNumFrames() + ", transforming frame 1");
+                return 0;
+            }
+            toReturn--;//frames are 0 based so need to -1
+            return toReturn;
+        } catch (NumberFormatException e) {
+            AlertBox.display("Error", "Number not entered into text box, transforming frame 1");
+            return 0;
+        }
     }
 }

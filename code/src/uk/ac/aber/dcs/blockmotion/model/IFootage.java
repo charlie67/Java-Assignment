@@ -58,6 +58,13 @@ public abstract interface IFootage {
      */
     public abstract void transform(Transformer t);
 
+    /**
+     * Will transform a specific frame instead of everything.
+     * @param t the transformer
+     * @param frame the frame to transform
+     */
+    public void transform(Transformer t, int frame);
+
     /***
      * Method used to test my loading function
      */
