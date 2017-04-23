@@ -5,6 +5,7 @@ import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
@@ -18,6 +19,7 @@ import uk.ac.aber.dcs.blockmotion.transformer.*;
  */
 public class TransformMenu {
     private Transform transformer;
+    private boolean transformationsDone = false;
 
     /* these are here because otherwise I was getting
      Variable used in lambda expression should be final or effectively final
@@ -41,6 +43,9 @@ public class TransformMenu {
             window.setTitle("Transformation Menu");
 
             TextField slideNumber = new TextField("1");
+            TextField frameNumber = new TextField("1");
+
+            CheckBox checkBox = new CheckBox("All Frames");
 
             Button slideLeftButton = new Button();
             Button slideRightButton = new Button();
@@ -56,15 +61,10 @@ public class TransformMenu {
             slideLeftButton.setOnAction(event -> {
                 transformer = new SlideLeft();
                 slideLeftNumber = Integer.parseInt(slideNumber.getText());
+                transformationsDone = true;
+                
+                footage.transform(transformer);
 
-                if (footage == null) {
-
-                    AlertBox.display("Error", "You need to load the footage first");
-                } else {
-                    for (int i = 0; i < slideLeftNumber; i++) {
-                        footage.transform(transformer);
-                    }
-                }
             });
 
             //slide right button
@@ -72,15 +72,10 @@ public class TransformMenu {
             slideRightButton.setOnAction(event -> {
                 transformer = new SlideRight();
                 slideRightNumber = Integer.parseInt(slideNumber.getText());
+                transformationsDone = true;
 
-                if (footage == null) {
+                footage.transform(transformer);
 
-                    AlertBox.display("Error", "You need to load the footage first");
-                } else {
-                    for (int i = 0; i < slideRightNumber; i++) {
-                        footage.transform(transformer);
-                    }
-                }
             });
 
             //slide up button
@@ -88,15 +83,10 @@ public class TransformMenu {
             slideUpButton.setOnAction(event -> {
                 transformer = new SlideUp();
                 slideUpNumber = Integer.parseInt(slideNumber.getText());
+                transformationsDone = true;
 
-                if (footage == null) {
+                footage.transform(transformer);
 
-                    AlertBox.display("Error", "You need to load the footage first");
-                } else {
-                    for (int i = 0; i < slideUpNumber; i++) {
-                        footage.transform(transformer);
-                    }
-                }
             });
 
             //slide down button
@@ -104,39 +94,30 @@ public class TransformMenu {
             slideDownButton.setOnAction(event -> {
                 transformer = new SlideDown();
                 slideDownNumber = Integer.parseInt(slideNumber.getText());
+                transformationsDone = true;
 
-                if (footage == null) {
+                footage.transform(transformer);
 
-                    AlertBox.display("Error", "You need to load the footage first");
-                } else {
-                    for (int i = 0; i < slideDownNumber; i++) {
-                        footage.transform(transformer);
-                    }
-                }
             });
 
             //flip vertical button
             flipVerticalButton.setText("Vertical Flip");
             flipVerticalButton.setOnAction(event -> {
                 transformer = new FlipVertical();
-                if (footage == null) {
+                transformationsDone = true;
 
-                    AlertBox.display("Error", "You need to load the footage first");
-                } else {
-                    footage.transform(transformer);
-                }
+                footage.transform(transformer);
+
             });
 
             //flip horizontal button
             flipHorizontalButton.setText("Horizontal Flip");
             flipHorizontalButton.setOnAction(event -> {
                 transformer = new FlipHorizontal();
-                if (footage == null) {
+                transformationsDone = true;
 
-                    AlertBox.display("Error", "You need to load the footage first");
-                } else {
-                    footage.transform(transformer);
-                }
+                footage.transform(transformer);
+
             });
 
 
