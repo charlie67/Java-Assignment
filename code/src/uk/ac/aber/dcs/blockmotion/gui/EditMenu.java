@@ -6,6 +6,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -13,7 +14,7 @@ import uk.ac.aber.dcs.blockmotion.model.IFootage;
 
 /**
  * @author Charlie Robinson
- * @version 20.4.17
+ * @version 23.4.17
  */
 public class EditMenu {
     private int frameNum;
@@ -43,6 +44,10 @@ public class EditMenu {
             TextField columnNumber = new TextField();
             TextField rowNumber = new TextField();
 
+            Label frameLabel = new Label("Frame Number");
+            Label columnLabel = new Label("Column Number");
+            Label rowLabel = new Label("Row Number");
+
             ChoiceBox<String> charReplace = new ChoiceBox<>();
 
             Button set = new Button();
@@ -54,9 +59,23 @@ public class EditMenu {
             //set button
             set.setText("Set");
             set.setOnAction(event -> {
-                frameNum = Integer.parseInt(frameNumber.getText())-1;
-                row = Integer.parseInt(rowNumber.getText())-1;
-                column = Integer.parseInt(columnNumber.getText())-1;
+                try {
+                    frameNum = Integer.parseInt(frameNumber.getText()) - 1;
+                }catch(NumberFormatException e){
+                    AlertBox.display("Error", "Number not entered in frame number box");
+                }
+
+                try {
+                    row = Integer.parseInt(rowNumber.getText()) - 1;
+                }catch(NumberFormatException e){
+                    AlertBox.display("Error", "Number not entered in row number box");
+                }
+
+                try {
+                    column = Integer.parseInt(columnNumber.getText()) - 1;
+                }catch(NumberFormatException e){
+                AlertBox.display("Error", "Number not entered in column number box");
+                }
                 toReplace = charReplace.getValue().charAt(0);
                 //all of these are 0 based so need to take away 1
 
@@ -73,10 +92,13 @@ public class EditMenu {
 
 
             GridPane.setConstraints(frameNumber, 0, 0);
+            GridPane.setConstraints(frameLabel, 1, 0);
 
             GridPane.setConstraints(columnNumber,0,1);
+            GridPane.setConstraints(columnLabel, 1, 1);
 
             GridPane.setConstraints(rowNumber,0,2);
+            GridPane.setConstraints(rowLabel, 1, 2);
 
             GridPane.setConstraints(charReplace,0,3);
             GridPane.setHalignment(charReplace, HPos.CENTER);
@@ -87,7 +109,8 @@ public class EditMenu {
             GridPane.setConstraints(cancel,1,4);
             GridPane.setHalignment(cancel, HPos.CENTER);
 
-            grid.getChildren().setAll(frameNumber,columnNumber,rowNumber,charReplace,set,cancel);
+            grid.getChildren().setAll(frameNumber,columnNumber,rowNumber,charReplace,set,cancel, frameLabel, columnLabel,
+                    rowLabel);
 
             Scene scene = new Scene(grid);
 
