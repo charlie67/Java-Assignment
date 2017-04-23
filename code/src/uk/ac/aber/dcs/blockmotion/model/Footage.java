@@ -1,5 +1,6 @@
 package uk.ac.aber.dcs.blockmotion.model;
 
+
 import uk.ac.aber.dcs.blockmotion.transformer.Transformer;
 
 import java.io.FileReader;
@@ -105,6 +106,10 @@ public class Footage implements IFootage {
             t.transform(f);
         }
         //for each frame f, transform it using the supplied transformation
+    }
+
+    public void transform(Transformer t, int frame){
+        t.transform(frames.get(frame));
     }
 
     /**
