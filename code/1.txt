@@ -1,5 +1,11 @@
-1
 3
-blr
-rbb
-lbb
+3
+rrr
+rrr
+rrr
+bbb
+bbb
+bbb
+lll
+lll
+lll
