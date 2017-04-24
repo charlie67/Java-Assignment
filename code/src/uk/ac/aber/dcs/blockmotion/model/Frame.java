@@ -14,8 +14,14 @@ public class Frame implements IFrame {
 
     }
 
+    public Frame(int numRow){
+        numRows = numRow;
+        blocks = new char[numRow][numRow];
+    }
+
     @Override
     public void insertLines(String[] lines) {
+
     }
 
     @Override

@@ -17,7 +17,7 @@ import java.util.Scanner;
 public class Footage implements IFootage {
     private int numFrames;
     private int numRows; //rows are the same as columns
-    private ArrayList<IFrame> frames = new ArrayList<IFrame>();
+    private ArrayList<IFrame> frames = new ArrayList<>();
 
 
     @Override
@@ -55,17 +55,16 @@ public class Footage implements IFootage {
              */
 
             for (int z = 0; z < numFrames; z++) {
-                Frame fr = new Frame();
-                fr.setBlockSize(numRows);
-                frames.add(fr);
+                Frame fr = new Frame(numRows);
                 //the top of the file relates to the bottom of the frame
 
                 for (int i = 0; i < numRows; i++) {//rows is the same as columns so this works
                     String line = infile.nextLine();
                     for (int j = 0; j<numRows; j++) {
-                        frames.get(z).setChar(numRows-1-i, j, line.charAt(j));
+                        fr.setChar(numRows-1-i, j, line.charAt(j));
                     }
                 }
+                this.add(fr);
 
             }
         }
