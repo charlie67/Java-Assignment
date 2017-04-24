@@ -752,7 +752,12 @@ public class Animator extends Application{
                 int currentFrameIndex = 0;
                 Background bck = null;
                 while (doRun) {
-                    if (currentFrameIndex >= numFrames - 1) currentFrameIndex = 0;
+                    if (currentFrameIndex >= numFrames ) currentFrameIndex = 0;
+                    /*
+                    the above line used to be if (currentFrameIndex >= numFrames - 1) currentFrameIndex = 0;
+                    I removed the -1 because the final frame was not being displayed in the animation
+                    //TODO put this into the write up
+                     */
                     IFrame currentFrame = footage.getFrame(currentFrameIndex);
                     // Iterate through the current frame displaying appropriate colour
                     for (int row = 0; row < footage.getNumRows(); row++) {
