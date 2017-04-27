@@ -14,9 +14,9 @@ import uk.ac.aber.dcs.blockmotion.model.IFootage;
 
 /**
  * @author Charlie Robinson
- * @version 23.4.17
+ * @version 27.4.17
  */
-public class EditMenu {
+public class EditCurrentFrame {
     private int frameNum;
     private int maxFrameNum;//the number of frame the footage has
     private int row;
@@ -53,26 +53,26 @@ public class EditMenu {
             Button set = new Button();
             Button cancel = new Button();
 
-            charReplace.getItems().addAll("b - blue", "l - yellow", "r - black");
-            charReplace.setValue("b - blue");
+            charReplace.getItems().addAll("b - Blue", "l - Yellow", "r - Black", "h - Red", "p - Purple", "g - Green");
+            charReplace.setValue("b - Blue");
 
             //set button
             set.setText("Set");
             set.setOnAction(event -> {
                 try {
-                    frameNum = Integer.parseInt(frameNumber.getText()) - 1;
+                    frameNum = Math.abs(Integer.parseInt(frameNumber.getText()) - 1);
                 }catch(NumberFormatException e){
                     AlertBox.display("Error", "Number not entered in frame number box");
                 }
 
                 try {
-                    row = Integer.parseInt(rowNumber.getText()) - 1;
+                    row = Math.abs(Integer.parseInt(rowNumber.getText()) - 1);
                 }catch(NumberFormatException e){
                     AlertBox.display("Error", "Number not entered in row number box");
                 }
 
                 try {
-                    column = Integer.parseInt(columnNumber.getText()) - 1;
+                    column = Math.abs(Integer.parseInt(columnNumber.getText()) - 1);
                 }catch(NumberFormatException e){
                 AlertBox.display("Error", "Number not entered in column number box");
                 }
@@ -83,6 +83,7 @@ public class EditMenu {
                     //all correct so proceed with the change
                     footage.getFrame(frameNum).setChar(row,column,toReplace);
                     AlertBox.display("Change Done", "Done!");
+                    transformationsDone = true;
                 }
             });
 

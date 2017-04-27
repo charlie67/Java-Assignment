@@ -5,7 +5,7 @@ package uk.ac.aber.dcs.blockmotion.gui;
  * need to update this file
  *
  * @author Chris Loftus  Charlie Robinson
- * @version 23rd April 2017
+ * @version 27th April 2017
  */
 
 import javafx.application.Application;
@@ -26,10 +26,10 @@ import uk.ac.aber.dcs.blockmotion.model.IFrame;
 import uk.ac.aber.dcs.blockmotion.transformer.*;
 import uk.ac.aber.dcs.blockmotion.gui.TransformMenu;
 
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
-public class Animator extends Application{
+public class Animator extends Application {
 
     private Button[][] gridArray;
     private GridPane grid;
@@ -49,10 +49,12 @@ public class Animator extends Application{
     private int slideDownNumber = 1;
     private int slideUpNumber = 1;
 
-    //gui stuff
+    //gui
     private Stage window = new Stage();
     private TransformMenu transformMenu = new TransformMenu();
-    private EditMenu editMenu = new EditMenu();
+    private EditChoose editMenu = new EditChoose();
+    private EditCurrentFrame editCurrentFrame = new EditCurrentFrame();
+    private AddNewFrame addNewFrame = new AddNewFrame();
 
     public static void main(String[] args) {
         // This is how a javafx class is run.
@@ -72,6 +74,7 @@ public class Animator extends Application{
         // following comments
         stage = primaryStage;
 
+        loadSettings();
         runGui();
 
 
@@ -105,7 +108,8 @@ public class Animator extends Application{
             // but the file has been edited
 
             window.setOnCloseRequest(event -> {
-                if (editMenu.isTransformationsDone() || transformMenu.isTransformationsDone() || transformationsDone){
+                if (transformMenu.isTransformationsDone() || transformationsDone ||
+                        editCurrentFrame.isTransformationsDone() || addNewFrame.isTransformationsDone()) {
 
                     confirmSave.display(fileName, footage, confirmSaveWindow);
                 } else {
@@ -116,7 +120,7 @@ public class Animator extends Application{
 
             confirmSaveWindow.setOnCloseRequest(event -> {
 
-                if (confirmSave.isClose()){
+                if (confirmSave.isClose()) {
                     Platform.exit();
                 }
             });
@@ -153,13 +157,27 @@ public class Animator extends Application{
                                 footage.load(fileName);
                                 go = false;
                                 System.out.println("loaded footage for " + fileName);
+                                saveSettings();
 
                                 createGrid(footage.getNumRows());
                                 updateWindowTitle();
 
-                            } catch (IOException e) {
+                            } catch (FileNotFoundException fnfe) {
+                                System.err.println(fileName + " not found, provide a different name for the footage" +
+                                        " file or press q to quit");
+
+                                String answer = in.nextLine();
+
+                                if (answer.equals("q")) {
+                                    break;
+                                } else {
+                                    fileName = answer;
+                                }
+
+                            } catch (IOException ioe) {
                                 System.err.println("Could not open file: " + fileName +
                                         " provide a different name for the footage file or press q to quit");
+
                                 String answer = in.nextLine();
                                 if (answer.equals("q")) {
                                     break;
@@ -179,6 +197,7 @@ public class Animator extends Application{
                         System.out.println("Enter the new filename");
                         String newFilename = in.nextLine();
                         saveFootage(newFilename);
+                        saveSettings();
 
                         break;
 
@@ -201,10 +220,10 @@ public class Animator extends Application{
                         break;
 
                     case "q":
-                        if (transformationsDone){
+                        if (transformationsDone) {
                             System.out.println("Do you want to save first (y/n)?");
                             String input = in.nextLine();
-                            if (input.equals("y")){
+                            if (input.equals("y")) {
                                 saveFootage(fileName);
                             }
                             Platform.exit();
@@ -297,7 +316,7 @@ public class Animator extends Application{
                     System.out.println("Sliding left");
 
                     transformer = new SlideLeft();
-                    for (int i =0; i<slideLeftNumber; i++) {
+                    for (int i = 0; i < slideLeftNumber; i++) {
                         footage.transform(transformer);
                     }
 
@@ -308,7 +327,7 @@ public class Animator extends Application{
                     System.out.println("Sliding right");
 
                     transformer = new SlideRight();
-                    for (int i =0; i<slideRightNumber; i++) {
+                    for (int i = 0; i < slideRightNumber; i++) {
                         footage.transform(transformer);
                     }
 
@@ -319,7 +338,7 @@ public class Animator extends Application{
                     System.out.println("Sliding up");
 
                     transformer = new SlideUp();
-                    for (int i =0; i<slideUpNumber; i++) {
+                    for (int i = 0; i < slideUpNumber; i++) {
                         footage.transform(transformer);
                     }
 
@@ -330,7 +349,7 @@ public class Animator extends Application{
                     System.out.println("Sliding down");
 
                     transformer = new SlideDown();
-                    for (int i =0; i<slideDownNumber; i++) {
+                    for (int i = 0; i < slideDownNumber; i++) {
                         footage.transform(transformer);
                     }
 
@@ -363,7 +382,7 @@ public class Animator extends Application{
 
                 case "r":
                     //need to do switch case on previousInput
-                    switch(previousInput){
+                    switch (previousInput) {
                         case "fh":
                             System.out.println("Flipping horizontally");
 
@@ -386,7 +405,7 @@ public class Animator extends Application{
                             System.out.println("Sliding left");
 
                             transformer = new SlideLeft();
-                            for (int i =0; i<slideLeftNumber; i++) {
+                            for (int i = 0; i < slideLeftNumber; i++) {
                                 footage.transform(transformer);
                             }
 
@@ -397,7 +416,7 @@ public class Animator extends Application{
                             System.out.println("Sliding right");
 
                             transformer = new SlideRight();
-                            for (int i =0; i<slideRightNumber; i++) {
+                            for (int i = 0; i < slideRightNumber; i++) {
                                 footage.transform(transformer);
                             }
 
@@ -408,7 +427,7 @@ public class Animator extends Application{
                             System.out.println("Sliding up");
 
                             transformer = new SlideUp();
-                            for (int i =0; i<slideUpNumber; i++) {
+                            for (int i = 0; i < slideUpNumber; i++) {
                                 footage.transform(transformer);
                             }
 
@@ -419,7 +438,7 @@ public class Animator extends Application{
                             System.out.println("Sliding down");
 
                             transformer = new SlideDown();
-                            for (int i =0; i<slideDownNumber; i++) {
+                            for (int i = 0; i < slideDownNumber; i++) {
                                 footage.transform(transformer);
                             }
 
@@ -465,7 +484,7 @@ public class Animator extends Application{
                     break;
             }
 
-            if (!input.equals("r")){
+            if (!input.equals("r")) {
                 previousInput = input;
             }
 
@@ -473,7 +492,7 @@ public class Animator extends Application{
 
     }
 
-    private void updateWindowTitle(){
+    private void updateWindowTitle() {
         Platform.runLater(() -> {
             window.setTitle("Blockmotion " + fileName);
         });
@@ -482,7 +501,7 @@ public class Animator extends Application{
     /*
     creates and starts the GUI
      */
-    private void runGui(){
+    private void runGui() {
         Platform.runLater(() -> {
             Button fileNameButton;
             Button loadAnimationButton;
@@ -492,7 +511,7 @@ public class Animator extends Application{
             Button transformMenuButton;
             Button editMenuButton;
 
-            TextField fileNameTextField = new TextField("fileName.txt");
+            TextField fileNameTextField = new TextField(fileName);
 
             String unloaded = "No footage loaded";
 
@@ -520,7 +539,6 @@ public class Animator extends Application{
             fileNameButton = new Button();
             fileNameButton.setText("Set File Name");
             updateWindowTitle();
-
             fileNameButton.setOnAction(e -> {
                 fileName = fileNameTextField.getText();
                 currentFileNameLabel.setText("Current file name: " + fileName);
@@ -535,6 +553,7 @@ public class Animator extends Application{
                 //set the filename in case set file name button not pressed
                 fileName = fileNameTextField.getText();
                 currentFileNameLabel.setText("Current file name: " + fileName);
+                saveSettings();
 
                 try {
                     footage = new Footage();
@@ -544,7 +563,7 @@ public class Animator extends Application{
                     updateWindowTitle();
                     loadedLabel.setText(fileName + " is loaded");
 
-                } catch (IOException eGuiLoad){
+                } catch (IOException eGuiLoad) {
                     AlertBox.display("Load Error", fileName + " not found, please enter a new name and try again.");
                 }
             });
@@ -554,7 +573,9 @@ public class Animator extends Application{
             saveAnimationButton.setText("Save");
             saveAnimationButton.setOnAction(e -> {
                 fileName = fileNameTextField.getText();
+                currentFileNameLabel.setText("Current file name: " + fileName);
                 saveFootage(fileName);
+                saveSettings();
             });
 
             //run button
@@ -595,35 +616,32 @@ public class Animator extends Application{
                 if (footage == null) {
                     AlertBox.display("Menu Error", "You need to load the footage first");
                 } else {
-                    editMenu.display(footage);
+                    editMenu.display(footage, addNewFrame, editCurrentFrame);
                 }
             });
 
-            //help button
-            Button help = new Button("❓");
-
             //sets all the items on the grid
-            GridPane.setConstraints(fileNameButton,0,0);
+            GridPane.setConstraints(fileNameButton, 0, 0);
             GridPane.setHalignment(fileNameButton, HPos.CENTER);
 
-            GridPane.setConstraints(fileNameTextField,1,0);
+            GridPane.setConstraints(fileNameTextField, 1, 0);
             GridPane.setHalignment(fileNameTextField, HPos.CENTER);
 
-            GridPane.setConstraints(currentFileNameLabel,2,0);
+            GridPane.setConstraints(currentFileNameLabel, 2, 0);
             GridPane.setHalignment(currentFileNameLabel, HPos.CENTER);
 
 
-            GridPane.setConstraints(loadedLabel,2,1);
+            GridPane.setConstraints(loadedLabel, 2, 1);
             GridPane.setHalignment(loadedLabel, HPos.CENTER);
 
-            GridPane.setConstraints(loadAnimationButton,0,1);
+            GridPane.setConstraints(loadAnimationButton, 0, 1);
             GridPane.setHalignment(loadAnimationButton, HPos.CENTER);
 
-            GridPane.setConstraints(saveAnimationButton,1,1);
+            GridPane.setConstraints(saveAnimationButton, 1, 1);
             GridPane.setHalignment(saveAnimationButton, HPos.CENTER);
 
 
-            GridPane.setConstraints(stateLabel,2,2);
+            GridPane.setConstraints(stateLabel, 2, 2);
             GridPane.setHalignment(stateLabel, HPos.CENTER);
 
             GridPane.setConstraints(runAnimationButton, 0, 2);
@@ -639,13 +657,10 @@ public class Animator extends Application{
             GridPane.setConstraints(editMenuButton, 1, 3);
             GridPane.setHalignment(editMenuButton, HPos.CENTER);
 
-            GridPane.setConstraints(help,2,3);
-            GridPane.setHalignment(help, HPos.RIGHT);
-
 
             grid.getChildren().addAll(fileNameButton, loadAnimationButton, currentFileNameLabel, saveAnimationButton,
                     stateLabel, fileNameTextField, loadedLabel, runAnimationButton, stopAnimationButton, transformMenuButton,
-                    editMenuButton, help);
+                    editMenuButton);
 
 
             Scene scene = new Scene(grid);
@@ -655,7 +670,8 @@ public class Animator extends Application{
     }
 
     private void updateTransformDone() {
-        editMenu.setTransformationsDone(false);
+        editCurrentFrame.setTransformationsDone(false);
+        addNewFrame.setTransformationsDone(false);
         transformMenu.setTransformationsDone(false);
         this.transformationsDone = false;
     }
@@ -746,13 +762,16 @@ public class Animator extends Application{
                 Background blackBg = new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY));
                 Background blueBg = new Background(new BackgroundFill(Color.BLUE, CornerRadii.EMPTY, Insets.EMPTY));
                 Background whiteBg = new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY));
+                Background redBg = new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY));
+                Background purpleBg = new Background(new BackgroundFill(Color.PURPLE, CornerRadii.EMPTY, Insets.EMPTY));
+                Background greenBg = new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY));
 
                 doRun = true;
                 int numFrames = footage.getNumFrames();
                 int currentFrameIndex = 0;
                 Background bck = null;
                 while (doRun) {
-                    if (currentFrameIndex >= numFrames ) currentFrameIndex = 0;
+                    if (currentFrameIndex >= numFrames) currentFrameIndex = 0;
                     /*
                     the above line used to be if (currentFrameIndex >= numFrames - 1) currentFrameIndex = 0;
                     I removed the -1 because the final frame was not being displayed in the animation
@@ -771,6 +790,15 @@ public class Animator extends Application{
                                     break;
                                 case 'b':
                                     bck = blueBg;
+                                    break;
+                                case 'h':
+                                    bck = redBg;
+                                    break;
+                                case 'p':
+                                    bck = purpleBg;
+                                    break;
+                                case 'g':
+                                    bck = greenBg;
                                     break;
                                 default:
                                     bck = whiteBg;
@@ -831,7 +859,7 @@ public class Animator extends Application{
         System.out.println("Enter option:");
     }
 
-    private void advancedEditMenu(){
+    private void advancedEditMenu() {
         String input;
 
         System.out.println("** Advanced Edit **");
@@ -841,16 +869,16 @@ public class Animator extends Application{
             advancedEditMenuPrint();
             input = in.nextLine();
 
-            switch(input){
-                case("e"):
+            switch (input) {
+                case ("e"):
                     System.out.println("What frame do you want to edit");
-                    int frame = in.nextInt()-1;
+                    int frame = in.nextInt() - 1;
 
                     System.out.println("Enter the column number");
-                    int column = in.nextInt()-1;
+                    int column = in.nextInt() - 1;
 
                     System.out.println("Enter the row number");
-                    int row = in.nextInt()-1;//-1 because all of these are 0 based
+                    int row = in.nextInt() - 1;//-1 because all of these are 0 based
                     in.nextLine();
 
                     System.out.println("Enter the char to replace");
@@ -859,7 +887,7 @@ public class Animator extends Application{
                     System.out.println("r - black");
                     char charToReplace = in.nextLine().charAt(0);
 
-                    if(validateData(frame, column, row, charToReplace)){
+                    if (validateData(frame, column, row, charToReplace)) {
                         footage.getFrame(frame).setChar(row, column, charToReplace);
                     } else {
                         System.out.println("You entered incorrect data");
@@ -869,37 +897,57 @@ public class Animator extends Application{
         } while (!input.equals("q"));
     }
 
-    private void advancedEditMenuPrint(){
+    private void advancedEditMenuPrint() {
         System.out.println("e - edit a frame");
         System.out.println("q - quit this menu");
     }
 
 
-    /**
+    /*
      * Used to print out the i's and j's to make sure that they are stored correctly
      */
-    private void layoutTest(){
+    private void layoutTest() {
         System.out.println("i = 0, j = 0");
-        System.out.println(footage.getFrame(0).getChar(0,0));
+        System.out.println(footage.getFrame(0).getChar(0, 0));
 
         System.out.println("i = 0, j = 1");
-        System.out.println(footage.getFrame(0).getChar(0,1));
+        System.out.println(footage.getFrame(0).getChar(0, 1));
 
         System.out.println("i = 0, j = 2");
-        System.out.println(footage.getFrame(0).getChar(0,2));
+        System.out.println(footage.getFrame(0).getChar(0, 2));
     }
 
-    private boolean validateData(int frame, int column, int row, char replace){
-        if (column>=footage.getNumRows()){
+    private boolean validateData(int frame, int column, int row, char replace) {
+        if (column >= footage.getNumRows()) {
             return false;
-        } else if(row>=footage.getNumRows()){
+        } else if (row >= footage.getNumRows()) {
             return false;
-        } else if (frame>=footage.getNumFrames()){
+        } else if (frame >= footage.getNumFrames()) {
             return false;
-        } else if(replace == 'b' || replace == 'r' || replace == 'l'){
+        } else if (replace == 'b' || replace == 'r' || replace == 'l') {
             return true;
         } else {
             return false;
+        }
+    }
+
+    /*
+     * Will laod settings.txt
+     */
+    private void loadSettings() {
+        try (Scanner infile = new Scanner(new FileReader("settings.txt"))) {
+            fileName = infile.nextLine();//first line contains the last used file name
+        } catch (IOException e) {
+            System.err.println("Error loading settings.");
+        }
+    }
+
+    private void saveSettings() {
+        try (PrintWriter outfile = new PrintWriter(new FileWriter("settings.txt"))) {
+
+            outfile.println(fileName);//first line contains the last used file name
+        } catch (IOException e) {
+            System.err.println("Settings file could not be saved");
         }
     }
 }

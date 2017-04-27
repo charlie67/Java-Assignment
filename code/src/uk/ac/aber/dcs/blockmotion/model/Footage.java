@@ -3,16 +3,13 @@ package uk.ac.aber.dcs.blockmotion.model;
 
 import uk.ac.aber.dcs.blockmotion.transformer.Transformer;
 
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
  * @author Charlie Robinson
- * @version 16.4.17
+ * @version 27.4.17
  */
 public class Footage implements IFootage {
     private int numFrames;
@@ -81,19 +78,11 @@ public class Footage implements IFootage {
                 f.tofile(outfile);
             }
 
-//            for (int z = 0; z < numFrames; z++) {
-//
-//                for (int i = 0; i < numRows; i++) {//rows is the same as columns so this works
-//                    for (int j = 0; j<numRows; j++) {
-//                        outfile.print(frames.get(z).getChar(i,j));
-//                    }
-//                    outfile.print('\n');
-//                }
-//
-//            }
+        } catch (FileNotFoundException fnfe){
+            System.err.println("File not found, please try again");
 
-        } catch (IOException e) {
-            System.err.println("File not found, please try again.");
+        } catch (IOException ioe) {
+            System.err.println("File error, please try again.");
         }
 
     }
@@ -125,5 +114,9 @@ public class Footage implements IFootage {
             }
         }
 
+    }
+
+    public void setNumFrames(int num){
+        numFrames = num;
     }
 }

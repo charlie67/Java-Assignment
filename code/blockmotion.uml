@@ -9,11 +9,11 @@
     <node x="717.6852487789988" y="0.0">uk.ac.aber.dcs.blockmotion.model.IFrame</node>
     <node x="793.4563492063492" y="188.0">uk.ac.aber.dcs.blockmotion.model.IFootage</node>
     <node x="455.65792887667885" y="79.0">uk.ac.aber.dcs.blockmotion.model.Frame</node>
-    <node x="0.0" y="297.0">uk.ac.aber.dcs.blockmotion.transformer.SlideUp</node>
     <node x="108.0" y="297.0">uk.ac.aber.dcs.blockmotion.transformer.SlideLeft</node>
+    <node x="0.0" y="297.0">uk.ac.aber.dcs.blockmotion.transformer.SlideUp</node>
     <node x="342.0" y="297.0">uk.ac.aber.dcs.blockmotion.transformer.SlideDown</node>
-    <node x="737.8313492063492" y="297.0">uk.ac.aber.dcs.blockmotion.model.Footage</node>
     <node x="402.4771062271063" y="396.0">uk.ac.aber.dcs.blockmotion.gui.Animator</node>
+    <node x="737.8313492063492" y="297.0">uk.ac.aber.dcs.blockmotion.model.Footage</node>
     <node x="385.26282051282055" y="188.0">uk.ac.aber.dcs.blockmotion.transformer.Transform</node>
     <node x="296.16666666666663" y="79.0">uk.ac.aber.dcs.blockmotion.transformer.Transformer</node>
   </nodes>
@@ -25,12 +25,6 @@
       <point x="422.04853479853483" y="267.0" />
       <point x="-14.714285714285722" y="14.5" />
     </edge>
-    <edge source="uk.ac.aber.dcs.blockmotion.transformer.SlideRight" target="uk.ac.aber.dcs.blockmotion.transformer.Transformer">
-      <point x="-25.25" y="-14.5" />
-      <point x="246.25" y="168.0" />
-      <point x="336.5238095238095" y="168.0" />
-      <point x="-16.142857142857167" y="14.5" />
-    </edge>
     <edge source="uk.ac.aber.dcs.blockmotion.transformer.SlideDown" target="uk.ac.aber.dcs.blockmotion.transformer.Transformer">
       <point x="-26.0" y="-14.5" />
       <point x="368.0" y="237.0" />
@@ -38,6 +32,12 @@
       <point x="359.23313492063494" y="168.0" />
       <point x="352.66666666666663" y="168.0" />
       <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="uk.ac.aber.dcs.blockmotion.transformer.SlideRight" target="uk.ac.aber.dcs.blockmotion.transformer.Transformer">
+      <point x="-25.25" y="-14.5" />
+      <point x="246.25" y="168.0" />
+      <point x="336.5238095238095" y="168.0" />
+      <point x="-16.142857142857167" y="14.5" />
     </edge>
     <edge source="uk.ac.aber.dcs.blockmotion.transformer.SlideUp" target="uk.ac.aber.dcs.blockmotion.transformer.Transformer">
       <point x="-22.0" y="-14.5" />
@@ -81,17 +81,17 @@
       <point x="480.90567765567766" y="267.0" />
       <point x="44.14285714285711" y="14.5" />
     </edge>
-    <edge source="uk.ac.aber.dcs.blockmotion.transformer.FlipHorizontal" target="uk.ac.aber.dcs.blockmotion.transformer.Transformer">
-      <point x="30.5" y="-14.5" />
-      <point x="684.5" y="138.0" />
-      <point x="401.0952380952381" y="138.0" />
-      <point x="48.428571428571445" y="14.5" />
-    </edge>
     <edge source="uk.ac.aber.dcs.blockmotion.transformer.Transform" target="uk.ac.aber.dcs.blockmotion.transformer.Transformer">
       <point x="-34.33333333333337" y="-14.5" />
       <point x="402.4294871794872" y="168.0" />
       <point x="368.80952380952374" y="168.0" />
       <point x="16.14285714285711" y="14.5" />
+    </edge>
+    <edge source="uk.ac.aber.dcs.blockmotion.transformer.FlipHorizontal" target="uk.ac.aber.dcs.blockmotion.transformer.Transformer">
+      <point x="30.5" y="-14.5" />
+      <point x="684.5" y="138.0" />
+      <point x="401.0952380952381" y="138.0" />
+      <point x="48.428571428571445" y="14.5" />
     </edge>
     <edge source="uk.ac.aber.dcs.blockmotion.transformer.FlipVertical" target="uk.ac.aber.dcs.blockmotion.transformer.Transformer">
       <point x="26.5" y="-14.5" />

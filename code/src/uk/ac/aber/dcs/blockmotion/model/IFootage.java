@@ -65,9 +65,15 @@ public abstract interface IFootage {
      */
     public void transform(Transformer t, int frame);
 
-    /***
+    /**
      * Method used to test my loading function
      */
     public abstract void printChar();
+
+    /**
+     * method to set the number of frames
+     * this is used when a new frame is added to the frames array list
+     */
+    public abstract void setNumFrames(int numFrame);
 
 }
