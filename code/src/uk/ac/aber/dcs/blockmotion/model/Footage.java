@@ -118,5 +118,13 @@ public class Footage implements IFootage {
 
     public void setNumFrames(int num){
         numFrames = num;
+
+        //todo test this
+        //I was adding huge amounts of frames to an animation and this was causing the
+        //numFrames int to become negative, this should fix it
+        if (numFrames < 0){
+            numFrames = 1;
+//            System.out.println("numFrames reset");
+        }
     }
 }

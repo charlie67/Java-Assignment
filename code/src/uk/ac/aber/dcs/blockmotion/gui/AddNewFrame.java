@@ -9,6 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+
 import uk.ac.aber.dcs.blockmotion.model.Frame;
 import uk.ac.aber.dcs.blockmotion.model.IFootage;
 
@@ -105,15 +106,14 @@ public class AddNewFrame {
                                             replace = 'y';
                                             break;
                                     }
-
-                                    frame.setChar(i, j, replace);
                                 }
+                                frame.setChar(i, j, replace);
                             }
                             //sets all the values of the frame to the value that the user chooses
-                            footage.add(frame);
-                            int newFrameNumber = footage.getNumFrames() + 1;
-                            footage.setNumFrames(newFrameNumber);
                         }
+                        footage.add(frame);
+                        int newFrameNumber = footage.getNumFrames() + 1;
+                        footage.setNumFrames(newFrameNumber);
                     }
                 }catch(NumberFormatException e){
                     AlertBox.display("Error", "Number not entered in frame number box");
@@ -141,7 +141,6 @@ public class AddNewFrame {
 
             window.setScene(scene);
             window.showAndWait();
-            window.close();
         });
     }
 
